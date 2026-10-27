@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-  --tamanho-header: 80px;
+  --tamanho-header: 100px;
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
@@ -32,9 +32,19 @@ body {
   height: 100%;
 }
 
+.header img {
+  height: 60px;
+  width: 60px;
+}
+
 .header a {
   text-decoration: none;
   color: #e3b062;
+}
+
+.logoNavbar {
+  display: flex;
+  flex-direction: row;
 }
 
 .agora {
@@ -58,6 +68,7 @@ body {
 
 .header h1 {
   margin: 0;
+  align-self: center;
 }
 
 /* BANNER */
