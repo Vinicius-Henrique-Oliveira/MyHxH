@@ -88,7 +88,7 @@
 
     </div>
 
-    <div class="box2-main">
+    <div class="box2-main" id="obra">
       
       <div class="part1-main">
       
@@ -97,18 +97,135 @@
         </div>
 
         <div class="text-part1">
+
           <span class="title-part1">01 / A OBRA</span>
 
           <h1>Uma licença para ir além.</h1>
+
+          <div class="text-boxPart1">
+
+            <span>Criado por Yoshihiro Togashi, Hunter x Hunter acompanha Gon Freecss, um garoto que deixa 
+              a ilha da Baleia para se tornar Hunter e encontrar seu pai, Ging.</span><br><br>
+            <span>No caminho, amizades improváveis, o misterioso Nen e escolhas difíceis revelam um mundo que nunca 
+              é tão simpes quanto parece.</span>
+
+          </div>
+
+          <span class="little-part1">MANGÁ · SHUEISHA · 1998 · / ANIME · 1999 & 2011</span>
+
         </div>
 
       </div>
 
       <div class="part2-main">
 
+        <div class="text-part2">
+
+          <span>02 / ROTAS DA AVENTURA</span>
+
+          <h1>Cada arco, um novo mundo.</h1>
+
+        </div>
+
+        <div class="rowIMG">
+
+          <div class="box-row1">
+
+            <img src="./assets/imgs/Primeiro_passo.png" alt="MyHxH">
+            <span>O PRIMEIRO PASSO</span>
+            <h2>Exame Hunter</h2>
+            <span class="text-row">Uma prova nada convencional aproxima Gon, 
+              Killua, Kurapika e Leorio. A amizade é só o começo.</span>
+
+          </div>
+
+          <div class="box-row2">
+
+            <img src="./assets/imgs/Yorknew.png" alt="MyHxH">
+            <span>PROMESSAS & SOMBRAS</span>
+            <h2>Yorknew City</h2>
+            <span class="text-row">Leilões, correntes e a Trupe Fantasma. 
+              Em Yorknew, o passado de Kurapika volta ao centro da história.</span>
+
+          </div>
+
+          <div class="box-row3">
+
+            <img src="./assets/imgs/Formigas.png" alt="MyHxH">
+            <span>O LIMITE DO HUMANO</span>
+            <h2>Formigas Quimera</h2>
+            <span class="text-row">Uma ameaça transforma a jornada em um encontro 
+              com questões sobre poder, identidade e humanidade.
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
 
       <div class="part3-main">
+
+        <div class="row-part3">
+
+          <div class="text-part3">
+
+            <span>03 / NOTAS DE CAMPO</span>
+
+            <h1>Você reparou nisso?</h1>
+
+          </div>
+
+          <span>Pequenos detalhes. Um universo inteiro.</span>
+
+        </div>
+
+        <div class="text-column1">
+
+          <h2>Duas formas de começar</h2>
+
+          <span>O anime de 1999 foi produzido pela Nippon Animation. A adaptação 
+            de 2011, do estúdio Madhouse, reconta a história desde o início e vai além.</span>
+
+        </div>
+
+        <div class="text-column2">
+
+          <h2>Nen não é só força</h2>
+
+          <span>Reforço, Emissão, Transformação, Materialização, Manipulação e 
+            Especialização: seis categorias ajudam a explicar as habilidades de Nen.</span>
+
+        </div>
+
+        <div class="text-column3">
+
+          <h2>Um alfabeto próprio</h2>
+
+          <span>Placas, documentos e livros da série usam a escrita Hunter: 
+            símbolos que correspondem aos caracteres do silabário japonês.</span>
+
+        </div>
+
+      </div>
+
+      <div class="part4-main">
+
+        <div class="text-column4">
+          
+          <span class="little-part4">PRÓXIMO DESTINO / SUAS ESCOLHAS</span>
+          
+          <h1>Todo fã tem uma história. Qual é a sua?</h1>
+
+          <span>Escolha seus favoritos e descubra o que a comunidade tem em comum.</span>
+          
+          <button onclick="window.location.href='quiz.html'">Responder ao quiz</button>
+
+        </div>
+
+        <div class="idHunter">
+          <img src="./assets/imgs/card.png" alt="">
+        </div>
 
       </div>
 
@@ -153,6 +270,11 @@
 
   function descer() {
     
+    document.getElementById("obra").scrollIntoView({
+      behavior:"smooth"
+
+    })
+
   }
 
 </script>
