@@ -19,6 +19,7 @@ body {
   background: var(--fundo-pagina);
   color: var(--verde-principal);
   font-family: 'Barlow', sans-serif;
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -46,7 +47,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(380px, 0.96fr);
   gap: 48px;
-  align-items: center;
+  align-items: start;
   padding: 60px 64px 42px;
 }
 
@@ -80,12 +81,13 @@ body {
 
 .column-main h1 {
   margin: 0;
-  max-width: 6.2ch;
+  max-width: 14ch;
   color: #f8f4ea;
   font-size: clamp(3.6rem, 7vw, 6.2rem);
   line-height: 0.96;
   letter-spacing: -0.05em;
   font-weight: 800;
+  text-wrap: balance;
 }
 
 .text-main {
@@ -119,6 +121,7 @@ body {
   font-size: 0.98rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  white-space: nowrap;
   cursor: pointer;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
 }
@@ -168,6 +171,46 @@ body {
   align-self: stretch;
   min-height: 520px;
   padding-top: 18px;
+}
+
+.img-main::before {
+  content: 'REGISTRO 001 / ALÉM DO HORIZONTE';
+  position: absolute;
+  top: 34px;
+  left: 22px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 12px;
+  background: rgba(244, 241, 231, 0.96);
+  color: #38564b;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.img-main::after {
+  content: 'HUNTER × HUNTER  ·  YOSHIHIRO TOGASHI';
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 18px;
+  background: rgba(17, 45, 37, 0.78);
+  color: #f3efdf;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .img-main img {
@@ -224,14 +267,22 @@ body {
 
 .low-main {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(70px, 0.26fr) minmax(220px, 0.45fr);
-  gap: 22px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr) 1px minmax(220px, 0.55fr);
+  gap: 26px;
+  align-items: stretch;
   padding: 26px 64px 30px;
   border-top: 1px solid rgba(245, 240, 228, 0.08);
 }
 
-.low-main h2 {
+.low-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.low-stat h2 {
   margin: 0;
   color: #f7f1e6;
   font-size: clamp(2.4rem, 3vw, 3.4rem);
@@ -239,20 +290,27 @@ body {
   letter-spacing: -0.05em;
 }
 
-.low-main > span {
+.low-stat span,
+.low-tag span {
   color: rgba(245, 240, 228, 0.72);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.barra {
-  justify-self: center;
+.low-divider {
+  align-self: center;
   width: 1px;
-  height: 46px;
+  height: 54px;
   background: rgba(245, 240, 228, 0.16);
-  font-size: 0;
+}
+
+.low-tag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .box2-main {
@@ -320,6 +378,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .text-part1 h1,
@@ -331,6 +390,7 @@ body {
   line-height: 0.98;
   letter-spacing: -0.05em;
   font-weight: 800;
+  text-wrap: balance;
 }
 
 .text-boxPart1 {
@@ -368,7 +428,7 @@ body {
 }
 
 .text-part2 h1 {
-  max-width: 10ch;
+  max-width: none;
 }
 
 .text-part2::after {
@@ -399,8 +459,9 @@ body {
 
 .rowIMG img {
   width: 100%;
-  aspect-ratio: 1.7 / 1;
+  height: 300px;
   object-fit: cover;
+  object-position: center center;
 }
 
 .rowIMG > div > span:first-of-type {
@@ -501,22 +562,25 @@ body {
 
 .part4-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.78fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 48px;
   align-items: center;
-  padding-top: 64px;
-  padding-bottom: 68px;
+  padding-top: 76px;
+  padding-bottom: 76px;
   background: linear-gradient(180deg, #1d4d3d 0%, #183f33 100%);
   color: #f4efe2;
 }
 
 .text-column4 {
+  flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  flex-wrap: nowrap;
+  gap: 16px;
+  max-width: 760px;
 }
 
 .text-column4 h1 {
-  max-width: 9.5ch;
+  max-width: 14ch;
   color: #f6f1e5;
 }
 
@@ -528,7 +592,31 @@ body {
 }
 
 .text-column4 button {
-  min-width: 182px;
+  min-width: 240px;
+  position: relative;
+  padding-inline: 24px 48px;
+}
+
+.text-column4 button::after {
+  content: '↗';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-52%);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.text-column4::after {
+  content: '3 PERGUNTAS · SEM RESPOSTA ERRADA';
+  display: inline-block;
+  margin-left: 16px;
+  color: rgba(244, 241, 231, 0.5);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .text-column4 button:hover {
@@ -540,8 +628,8 @@ body {
 }
 
 .idHunter img {
-  width: min(100%, 340px);
-  transform: rotate(-6deg);
+  width: min(100%, 390px);
+  transform: rotate(-7deg) translateY(-6px);
   filter: drop-shadow(0 20px 24px rgba(12, 30, 24, 0.28));
 }
 
@@ -564,16 +652,25 @@ body {
   }
 
   .low-main {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .barra {
+  .low-divider {
     display: none;
+  }
+
+  .low-tag {
+    grid-column: 1 / -1;
+    justify-content: center;
   }
 
   .part1-main,
   .part4-main {
     grid-template-columns: 1fr;
+  }
+
+  .part4-main {
+    gap: 28px;
   }
 
   .part3-main {
@@ -597,7 +694,7 @@ body {
 @media (max-width: 720px) {
   .box-main,
   .box2-main {
-    width: min(100% - 16px, 1280px);
+    width: 100%;
   }
 
   .fundo-main,
@@ -616,7 +713,7 @@ body {
   }
 
   .column-main h1 {
-    max-width: 8ch;
+    max-width: 100%;
     font-size: clamp(2.9rem, 16vw, 4.3rem);
   }
 
@@ -631,6 +728,11 @@ body {
     align-items: stretch;
   }
 
+  .text-column4::after {
+    margin-left: 0;
+    text-align: center;
+  }
+
   .button-main button,
   .text-column4 button {
     width: 100%;
@@ -639,6 +741,18 @@ body {
 
   .img-main {
     min-height: 300px;
+  }
+
+  .img-main::before {
+    top: 18px;
+    left: 16px;
+    font-size: 0.58rem;
+  }
+
+  .img-main::after {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.64rem;
   }
 
   .hero-label--top {
@@ -660,8 +774,14 @@ body {
     gap: 12px;
   }
 
-  .low-main > span {
+  .low-divider {
+    display: none;
+  }
+
+  .low-stat span,
+  .low-tag span {
     letter-spacing: 0.1em;
+    white-space: normal;
   }
 
   .img-part1 img {
@@ -693,6 +813,6 @@ body {
   }
 
   .idHunter img {
-    width: min(100%, 260px);
+    width: min(100%, 290px);
   }
 }
