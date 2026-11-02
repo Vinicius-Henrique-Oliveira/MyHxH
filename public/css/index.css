@@ -397,7 +397,6 @@ body {
   background: #fbf8f0;
   border: 1px solid var(--card-border);
   border-radius: 4px;
-  overflow: hidden;
   box-shadow: 0 6px 18px rgba(17, 45, 37, 0.04);
 }
 
@@ -428,15 +427,6 @@ body {
   font-size: clamp(1.55rem, 2vw, 2.1rem);
   line-height: 1.1;
   letter-spacing: -0.04em;
-}
-
-.rowIMG h2::after {
-  content: '↗';
-  color: var(--verde-principal);
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1;
-  transform: translateY(-1px);
 }
 
 .text-row {

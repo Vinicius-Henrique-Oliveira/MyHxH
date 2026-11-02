@@ -240,14 +240,15 @@ img {
 
 .hero-visual__label {
   position: absolute;
-  top: 26px;
-  left: 26px;
+  top: 28px;
+  left: 28px;
   z-index: 1;
   padding: 8px 12px;
-  background: rgba(244, 241, 231, 0.92);
+  background: rgba(244, 241, 231, 0.95);
   color: var(--verde-principal);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
