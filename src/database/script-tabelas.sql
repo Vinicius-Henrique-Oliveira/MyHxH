@@ -6,53 +6,65 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE MyHxH;
 
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
-);
+USE MyHxH;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE pergunta (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    enunciado VARCHAR(255) NOT NULL,
+    ordem_exibicao INT NOT NULL UNIQUE,
+    ativa BOOLEAN NOT NULL DEFAULT TRUE
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+
+CREATE TABLE alternativa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fk_pergunta INT NOT NULL,
+    texto VARCHAR(120) NOT NULL,
+    ordem_exibicao INT NOT NULL,
+    FOREIGN KEY (fk_pergunta)
+        REFERENCES pergunta(id)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+CREATE TABLE resposta (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuario INT NOT NULL,
+    fk_alternativa INT NOT NULL,
+    respondido_em TIMESTAMP NOT NULL
+        DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fk_usuario)
+        REFERENCES usuario(id),
+    FOREIGN KEY (fk_alternativa)
+        REFERENCES alternativa(id)
 );
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+
+-- Perguntas iniciais
+INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
+(1, 'Qual é o seu protagonista favorito?', 1),
+(2, 'Qual é o seu arco favorito?', 2),
+(3, 'Quem é seu integrante favorito da Trupe Fantasma?', 3);
+
+
+INSERT INTO alternativa (id, fk_pergunta, texto, ordem_exibicao) VALUES
+(1, 1, 'Gon Freecss', 1),
+(2, 1, 'Killua Zoldyck', 2),
+(3, 1, 'Kurapika', 3),
+(4, 1, 'Leorio Paradinight', 4),
+(5, 2, 'Exame Hunter', 1),
+(6, 2, 'Yorknew City', 2),
+(7, 2, 'Greed Island', 3),
+(8, 2, 'Formigas Quimera', 4),
+(9, 3, 'Chrollo Lucilfer', 1),
+(10, 3, 'Feitan Portor', 2),
+(11, 3, 'Machi Komacine', 3),
+(12, 3, 'Shizuku Murasaki', 4);
