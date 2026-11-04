@@ -48,7 +48,6 @@ CREATE TABLE resposta (
 );
 
 
--- Perguntas iniciais
 INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
 (1, 'Qual é o seu protagonista favorito?', 1),
 (2, 'Qual é o seu arco favorito?', 2),

@@ -77,10 +77,17 @@ img {
   color: var(--verde-principal);
 }
 
+.campo .requisitos {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 200;
+  max-width: 40ch;
+  color: rgba(22, 62, 50, 0.78);
+}
+
 .intro-text {
   margin: 18px 0 0;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.5rem;
   max-width: 40ch;
   color: rgba(22, 62, 50, 0.78);
 }
@@ -101,8 +108,15 @@ img {
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin-top: 18px;
+}
+
+.valid {
+  display: flex;
+  flex-direction: column;
+  height: 10px;
+  font-size: 0.85rem;
 }
 
 .campo {
