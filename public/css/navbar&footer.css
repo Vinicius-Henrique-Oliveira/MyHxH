@@ -223,6 +223,43 @@ img {
   max-width: 68ch;
 }
 
+.nav-actions span {
+  color: var(--verde-principal);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 16px;
+  border: 1px solid rgba(22, 62, 50, 0.18);
+  border-radius: 12px;
+  background: rgba(22, 62, 50, 0.04);
+  color: var(--verde-principal);
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  
+}
+
+.nav-actions button:hover {
+  background: rgba(22, 62, 50, 0.1);
+  border-color: rgba(22, 62, 50, 0.28);
+  transform: translateY(-1px);
+}
+
+.nav-actions button:focus-visible {
+  outline: 2px solid rgba(216, 112, 57, 0.45);
+  outline-offset: 2px;
+}
+
 .footer__bottom span {
   white-space: nowrap;
   align-self: flex-end;

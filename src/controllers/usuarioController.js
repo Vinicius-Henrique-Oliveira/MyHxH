@@ -28,7 +28,7 @@ function autenticar(req, res) {
                         });
 
                     } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                        res.status(403).send("Nenhuma conta encontrada com essas credenciais");
                     }
                 }
                 
