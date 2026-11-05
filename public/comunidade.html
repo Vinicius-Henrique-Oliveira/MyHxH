@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyHxH | Comunidade</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/comunidade.css">
+    <link rel="stylesheet" href="./css/navbar&footer.css">
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+                <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
+                <div class="brand-copy">
+                    <strong>MyHxH</strong>
+                    <span>De fã para explorador</span>
+                </div>
+
+            </a>
+
+            <nav class="nav-center" aria-label="Navegação principal">
+                <ul class="navbar navbar--center">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#obra">O universo</a></li>
+                    <li><a href="dashboard.html">Quiz de preferências</a></li>
+                    <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions" id="navActions">
+            </div>
+        </div>
+    </header>
+
+    <main class="page-community">
+        <section class="community-hero container" aria-labelledby="communityTitle">
+            <span class="community-hero__eyebrow">Ponto de encontro / Comunidade</span>
+            <h1 id="communityTitle">Toda jornada rende uma boa conversa.</h1>
+            <p>
+                Teorias, descobertas e histórias de quem também vive esse universo.
+                Encontre sua próxima discussão.
+            </p>
+        </section>
+
+        <section class="community-layout container" aria-label="Área da comunidade">
+            <div class="community-main">
+                <section class="compose-card" aria-labelledby="composeTitle">
+                    <span class="section-kicker">Compartilhe sua descoberta</span>
+                    <h2 id="composeTitle">O que está no seu radar, Hunter?</h2>
+
+                    <label class="compose-field" for="composeText">
+                        <span class="sr-only">Texto da publicação</span>
+                        <textarea
+                            id="composeText"
+                            placeholder="Compartilhe uma teoria, uma curiosidade ou sua cena favorita..."
+                            rows="5"
+                        ></textarea>
+                    </label>
+
+                    <div class="compose-actions">
+                        <button class="compose-button compose-button--ghost" type="button">
+                            Adicionar imagens
+                        </button>
+                        <span class="compose-helper">JPG ou PNG · até 4 imagens de 5 MB</span>
+                    </div>
+
+                    <div class="compose-footer">
+                        <label class="compose-select" for="categorySelect">
+                            <span>Categoria:</span>
+                            <select id="categorySelect">
+                                <option>Discussão</option>
+                                <option>Teorias</option>
+                                <option>Curiosidades</option>
+                                <option>Memes</option>
+                            </select>
+                        </label>
+
+                        <label class="compose-spoiler" for="spoilerCheck">
+                            <input id="spoilerCheck" type="checkbox" />
+                            <span>Contém spoilers</span>
+                        </label>
+
+                        <button class="compose-button" type="button">Publicar</button>
+                    </div>
+                </section>
+
+                <section class="feed-section" aria-labelledby="feedTitle">
+                    <span class="section-kicker">Conversas entre hunters</span>
+                    <h2 class="sr-only" id="feedTitle">Conversas entre hunters</h2>
+                    <div class="feed-list" id="communityFeed">
+                        <article class="post-card">
+                            <header class="post-card__header">
+                                <div class="post-author">
+                                    <img src="./assets/imgs/Primeiro_passo.png" alt="Avatar de Marina Freecss" />
+                                    <div>
+                                        <strong>Marina Freecss</strong>
+                                        <span>Há 12 min · Discussão · Sem spoilers</span>
+                                    </div>
+                                </div>
+                                <span class="post-menu" aria-hidden="true">...</span>
+                            </header>
+
+                            <h3>A melhor parte da aventura é quem vai com você.</h3>
+                            <p>
+                                Reassistindo ao Exame Hunter e percebendo como a amizade dos quatro já nasce ali.
+                                Qual encontro fez você se apaixonar por Hunter x Hunter?
+                            </p>
+
+                            <figure class="post-media">
+                                <img src="./assets/imgs/Horizonte.png" alt="Gon e Killua observando a paisagem" />
+                                <figcaption>Registro de fã / uma nova perspectiva</figcaption>
+                            </figure>
+
+                            <footer class="post-actions" aria-label="Ações da publicação">
+                                <button type="button">Curtir · 128</button>
+                                <button type="button">Comentários · 24</button>
+                                <button type="button">Compartilhar</button>
+                            </footer>
+                        </article>
+
+                        <article class="post-card">
+                            <header class="post-card__header">
+                                <div class="post-author">
+                                    <img src="./assets/imgs/Yorknew.png" alt="Avatar de Rafael Zoldyck" />
+                                    <div>
+                                        <strong>Rafael Zoldyck</strong>
+                                        <span>Há 38 min · Teorias e Nen · Sem spoilers</span>
+                                    </div>
+                                </div>
+                                <span class="post-menu" aria-hidden="true">...</span>
+                            </header>
+
+                            <h3>Se você pudesse criar uma habilidade de Nen...</h3>
+                            <p>
+                                Qual seria a sua categoria e que condição você escolheria? Eu iria de Transformação,
+                                mas ainda estou pensando em uma restrição que realmente fizesse sentido.
+                            </p>
+
+                            <footer class="post-actions" aria-label="Ações da publicação">
+                                <button type="button">Curtir · 86</button>
+                                <button type="button">Comentários · 37</button>
+                                <button type="button">Compartilhar</button>
+                            </footer>
+                        </article>
+
+                        <article class="post-card">
+                            <header class="post-card__header">
+                                <div class="post-author">
+                                    <img src="./assets/imgs/Formigas.png" alt="Avatar de Lia Kurta" />
+                                    <div>
+                                        <strong>Lia Kurta</strong>
+                                        <span>Há 1 h · Arcos da história · Sem spoilers</span>
+                                    </div>
+                                </div>
+                                <span class="post-menu" aria-hidden="true">...</span>
+                            </header>
+
+                            <h3>Yorknew tem uma atmosfera que não sai da cabeça.</h3>
+                            <p>
+                                A cidade, os leilões, a trilha sonora e a tensão em cada encontro. Sem entregar nada
+                                para quem ainda está assistindo: qual arco tem a sua ambientação favorita?
+                            </p>
+
+                            <footer class="post-actions" aria-label="Ações da publicação">
+                                <button type="button">Curtir · 204</button>
+                                <button type="button">Comentários · 51</button>
+                                <button type="button">Compartilhar</button>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="community-side" aria-label="Informações da comunidade">
+                <section class="side-card side-card--dark">
+                    <span class="section-kicker section-kicker--light">Licença para conversar</span>
+                    <h2>Um bom Hunter respeita o caminho.</h2>
+
+                    <ol class="community-rules">
+                        <li>Respeite outros fãs e opiniões.</li>
+                        <li>Sinalize spoilers do anime e mangá.</li>
+                        <li>Dê os créditos ao compartilhar arte.</li>
+                    </ol>
+
+                    <p>Aqui, a curiosidade é bem-vinda.</p>
+                </section>
+
+                <section class="side-card side-card--soft">
+                    <span class="section-kicker">Observatório Hunter</span>
+                    <h2>E os seus favoritos?</h2>
+                    <p>
+                        Descubra o que a comunidade escolheu no quiz de preferências.
+                    </p>
+
+                    <a class="side-card__button" href="dashboard.html">Ver dashboard coletiva</a>
+                </section>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer-brand">
+                <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+                    <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
+                    <div class="brand-copy">
+                        <strong>MyHxH</strong>
+                        <span>De fã para explorador</span>
+                    </div>
+                </a>
+                <p>Para quem sabe que a melhor parte é o caminho.</p>
+            </div>
+
+            <ul class="footer-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#obra">O universo</a></li>
+                <li><a href="dashboard.html">Quiz de preferências</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+            </ul>
+
+            <div class="footer-note">
+                <span>Sem fins lucrativos</span>
+                <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <h4>Projeto de fã não oficial. Hunter x Hunter é obra de Yoshihiro Togashi. Todos os direitos são dos seus
+                respectivos titulares.</h4>
+            <span>MyHxH &copy; 2026</span>
+        </div>
+    </footer>
+
+    <script>
+
+        function navbar_usuario() {
+
+            const nome = sessionStorage.NOME_USUARIO;
+
+            if (nome) {
+
+                const primeiro_nome = nome.split(" ")[0]
+
+                navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
+                            <button onclick="limparSessao()">Sair</button>`
+
+            } else {
+
+                navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
+                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+
+            }
+
+        }
+
+        navbar_usuario();
+
+
+    </script>
+
+</body>
+
+</html>
