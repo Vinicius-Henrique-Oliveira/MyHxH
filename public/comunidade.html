@@ -61,15 +61,13 @@
 
                     <label class="compose-field" for="composeText">
                         <span class="sr-only">Texto da publicação</span>
-                        <textarea
-                            id="composeText"
+                        <textarea id="composeText"
                             placeholder="Compartilhe uma teoria, uma curiosidade ou sua cena favorita..."
-                            rows="5"
-                        ></textarea>
+                            rows="5"></textarea>
                     </label>
 
                     <div class="compose-actions">
-                        <button class="compose-button compose-button--ghost" type="button">
+                        <button onclick="enviar()" class="compose-button compose-button--ghost" type="button">
                             Adicionar imagens
                         </button>
                         <span class="compose-helper">JPG ou PNG · até 4 imagens de 5 MB</span>
@@ -265,6 +263,24 @@
 
         navbar_usuario();
 
+        function enviar() {
+            
+            const formData = new FormData();
+            formData.append('foto', foto.files[0])
+            formData.append('nome', nome.value)
+            formData.append('email', email.value)
+
+            fetch("/usuarios/cadastro", {
+                method: "POST",
+                body: formData
+            })
+                .then(res => {
+                    window.location = "./perfil.html"
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
 
     </script>
 

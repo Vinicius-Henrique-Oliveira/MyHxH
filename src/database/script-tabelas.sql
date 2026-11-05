@@ -18,6 +18,15 @@ CREATE TABLE usuario (
     criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE comunidade (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuario INT NOT NULL,
+    mensagem VARCHAR(250),
+    categoria VARCHAR(12),
+        CONSTRAINT chCategoria 
+        CHECK (categoria IN('Discussão', 'Teorias', 'Curiosidades', 'Memes'))
+);
+
 CREATE TABLE pergunta (
     id INT PRIMARY KEY AUTO_INCREMENT,
     enunciado VARCHAR(255) NOT NULL,
