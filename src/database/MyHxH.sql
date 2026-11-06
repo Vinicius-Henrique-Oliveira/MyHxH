@@ -1,11 +1,3 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/*
-comandos para mysql server
-*/
-
 CREATE DATABASE MyHxH;
 
 USE MyHxH;
@@ -18,13 +10,25 @@ CREATE TABLE usuario (
     criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE comunidade (
+CREATE TABLE comunidade_post (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fk_usuario INT NOT NULL,
     mensagem VARCHAR(250),
-    categoria VARCHAR(12),
-        CONSTRAINT chCategoria 
-        CHECK (categoria IN('Discussão', 'Teorias', 'Curiosidades', 'Memes'))
+    categoria VARCHAR(20) NOT NULL,
+    spoiler BOOLEAN NOT NULL DEFAULT FALSE,
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chCategoria 
+        CHECK (categoria IN('Discussão', 'Teorias', 'Curiosidades', 'Memes')),
+    FOREIGN KEY (fk_usuario)
+        REFERENCES usuario(id)
+);
+
+CREATE TABLE comunidade_imagem (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fk_post INT NOT NULL,
+    caminho VARCHAR(250) NOT NULL,
+    FOREIGN KEY (fk_post)
+        REFERENCES comunidade_post(id)
 );
 
 CREATE TABLE pergunta (
@@ -55,7 +59,6 @@ CREATE TABLE resposta (
     FOREIGN KEY (fk_alternativa)
         REFERENCES alternativa(id)
 );
-
 
 INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
 (1, 'Qual é o seu protagonista favorito?', 1),

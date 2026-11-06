@@ -67,7 +67,9 @@
                     </label>
 
                     <div class="compose-actions">
-                        <button onclick="enviar()" class="compose-button compose-button--ghost" type="button">
+
+                        <input type="file" id="foto_arquivo" multiple hidden>
+                        <button type="button" class="compose-button compose-button--ghost" onclick="selecionarFotos()">
                             Adicionar imagens
                         </button>
                         <span class="compose-helper">JPG ou PNG · até 4 imagens de 5 MB</span>
@@ -77,6 +79,7 @@
                         <label class="compose-select" for="categorySelect">
                             <span>Categoria:</span>
                             <select id="categorySelect">
+                                <option disabled selected>Selecione uma opção</option>
                                 <option>Discussão</option>
                                 <option>Teorias</option>
                                 <option>Curiosidades</option>
@@ -89,94 +92,14 @@
                             <span>Contém spoilers</span>
                         </label>
 
-                        <button class="compose-button" type="button">Publicar</button>
+                        <button class="compose-button" onclick="publicar()" type="button">Publicar</button>
                     </div>
                 </section>
 
                 <section class="feed-section" aria-labelledby="feedTitle">
                     <span class="section-kicker">Conversas entre hunters</span>
                     <h2 class="sr-only" id="feedTitle">Conversas entre hunters</h2>
-                    <div class="feed-list" id="communityFeed">
-                        <article class="post-card">
-                            <header class="post-card__header">
-                                <div class="post-author">
-                                    <img src="./assets/imgs/Primeiro_passo.png" alt="Avatar de Marina Freecss" />
-                                    <div>
-                                        <strong>Marina Freecss</strong>
-                                        <span>Há 12 min · Discussão · Sem spoilers</span>
-                                    </div>
-                                </div>
-                                <span class="post-menu" aria-hidden="true">...</span>
-                            </header>
-
-                            <h3>A melhor parte da aventura é quem vai com você.</h3>
-                            <p>
-                                Reassistindo ao Exame Hunter e percebendo como a amizade dos quatro já nasce ali.
-                                Qual encontro fez você se apaixonar por Hunter x Hunter?
-                            </p>
-
-                            <figure class="post-media">
-                                <img src="./assets/imgs/Horizonte.png" alt="Gon e Killua observando a paisagem" />
-                                <figcaption>Registro de fã / uma nova perspectiva</figcaption>
-                            </figure>
-
-                            <footer class="post-actions" aria-label="Ações da publicação">
-                                <button type="button">Curtir · 128</button>
-                                <button type="button">Comentários · 24</button>
-                                <button type="button">Compartilhar</button>
-                            </footer>
-                        </article>
-
-                        <article class="post-card">
-                            <header class="post-card__header">
-                                <div class="post-author">
-                                    <img src="./assets/imgs/Yorknew.png" alt="Avatar de Rafael Zoldyck" />
-                                    <div>
-                                        <strong>Rafael Zoldyck</strong>
-                                        <span>Há 38 min · Teorias e Nen · Sem spoilers</span>
-                                    </div>
-                                </div>
-                                <span class="post-menu" aria-hidden="true">...</span>
-                            </header>
-
-                            <h3>Se você pudesse criar uma habilidade de Nen...</h3>
-                            <p>
-                                Qual seria a sua categoria e que condição você escolheria? Eu iria de Transformação,
-                                mas ainda estou pensando em uma restrição que realmente fizesse sentido.
-                            </p>
-
-                            <footer class="post-actions" aria-label="Ações da publicação">
-                                <button type="button">Curtir · 86</button>
-                                <button type="button">Comentários · 37</button>
-                                <button type="button">Compartilhar</button>
-                            </footer>
-                        </article>
-
-                        <article class="post-card">
-                            <header class="post-card__header">
-                                <div class="post-author">
-                                    <img src="./assets/imgs/Formigas.png" alt="Avatar de Lia Kurta" />
-                                    <div>
-                                        <strong>Lia Kurta</strong>
-                                        <span>Há 1 h · Arcos da história · Sem spoilers</span>
-                                    </div>
-                                </div>
-                                <span class="post-menu" aria-hidden="true">...</span>
-                            </header>
-
-                            <h3>Yorknew tem uma atmosfera que não sai da cabeça.</h3>
-                            <p>
-                                A cidade, os leilões, a trilha sonora e a tensão em cada encontro. Sem entregar nada
-                                para quem ainda está assistindo: qual arco tem a sua ambientação favorita?
-                            </p>
-
-                            <footer class="post-actions" aria-label="Ações da publicação">
-                                <button type="button">Curtir · 204</button>
-                                <button type="button">Comentários · 51</button>
-                                <button type="button">Compartilhar</button>
-                            </footer>
-                        </article>
-                    </div>
+                    <div class="feed-list" id="communityFeed"></div>
                 </section>
             </div>
 
@@ -263,24 +186,134 @@
 
         navbar_usuario();
 
-        function enviar() {
-            
-            const formData = new FormData();
-            formData.append('foto', foto.files[0])
-            formData.append('nome', nome.value)
-            formData.append('email', email.value)
+        function selecionarFotos() {
+            document.getElementById("foto_arquivo").click();
+        }
 
-            fetch("/usuarios/cadastro", {
+
+        function publicar() {
+
+            const mensagem = composeText.value.trim();
+            const fotosInput = document.getElementById("foto_arquivo");
+            const fotos = fotosInput.files;
+            const categoria = categorySelect.value;
+            const spoiler = spoilerCheck.checked;
+            const idUsuario = sessionStorage.ID_USUARIO;
+
+
+            if (!idUsuario) {
+
+                alert("Você precisa estar logado para publicar.");
+                return;
+
+            }
+
+            if (mensagem == "") {
+
+                alert("Digite uma mensagem antes de publicar");
+                return;
+
+            } else if (categoria == "Selecione uma opção") {
+
+                alert("Selecione uma categoria para publicação");
+                return;
+
+            }
+
+            const formData = new FormData();
+
+            formData.append("mensagem", mensagem);
+            formData.append("categoria", categoria);
+            formData.append("spoiler", spoiler);
+            formData.append("idUsuario", idUsuario);
+
+            for (let i = 0; i < fotos.length; i++) {
+                formData.append("fotos", fotos[i]);
+            }
+
+            fetch(`/comunidade/publicar/${idUsuario}`, {
                 method: "POST",
                 body: formData
             })
-                .then(res => {
-                    window.location = "./perfil.html"
+                .then(resposta => {
+                    if (!resposta.ok) {
+                        throw new Error("Erro ao publicar post");
+                    }
+                    return resposta.json();
                 })
-                .catch(err => {
-                    console.log(err);
+                .then(() => {
+                    alert("Post publicado com sucesso!");
+                    composeText.value = "";
+                    categorySelect.selectedIndex = 0;
+                    spoilerCheck.checked = false;
+                    fotosInput.value = "";
+                    carregarPosts();
                 })
+                .catch(erro => {
+                    console.log("DEU ERRO AAAAAAAAAEU NAO AGUENTO MAIS", erro);
+                    alert("Não foi possível publicar.");
+                });
         }
+
+        function carregarPosts() {
+            const feed = document.getElementById("communityFeed");
+
+            fetch("/comunidade/listar")
+                .then(function (resposta) {
+                    if (resposta.status === 204) {
+                        feed.innerHTML = "<p class='feed-empty'>Ainda não há publicações na comunidade.</p>";
+                        return [];
+                    }
+
+                    return resposta.json();
+                })
+                .then(function (posts) {
+                    if (!posts || posts.length === 0) {
+                        feed.innerHTML = "<p class='feed-empty'>Ainda não há publicações na comunidade.</p>";
+                        return;
+                    }
+
+                    feed.innerHTML = posts.map(function (post) {
+                        const imagens = post.imagens ? post.imagens.split("||") : [];
+                        const dataPublicacao = new Date(post.criado_em).toLocaleString("pt-BR", {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        });
+                        const spoilerTexto = Number(post.spoiler) === 1 ? "Com spoilers" : "Sem spoilers";
+                        const mediaHtml = imagens.map(function (imagem) {
+                            return `<figure class="post-media"><img src="./assets/${imagem}" alt="Imagem da publicação de ${post.nome}" /></figure>`;
+                        }).join("");
+
+                        return `
+                            <article class="post-card">
+                                <header class="post-card__header">
+                                    <div class="post-author">
+                                        <img src="./assets/imgs/gonIcon.png" alt="Avatar de ${post.nome}" />
+                                        <div>
+                                            <strong>${post.nome}</strong>
+                                            <span>${dataPublicacao} · ${post.categoria} · ${spoilerTexto}</span>
+                                        </div>
+                                    </div>
+                                    <span class="post-menu" aria-hidden="true">...</span>
+                                </header>
+
+                                <p>${post.mensagem}</p>
+
+                                ${mediaHtml}
+                            </article>
+                        `;
+                    }).join("");
+                })
+                .catch(function (erro) {
+                    console.log("Erro ao carregar posts:", erro);
+                    feed.innerHTML = "<p class='feed-empty'>Não foi possível carregar as publicações.</p>";
+                });
+        }
+
+        carregarPosts();
 
     </script>
 
