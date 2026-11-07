@@ -9,6 +9,7 @@ O projeto é um site temático de Hunter x Hunter (HxH) para fãs do anime, com:
 - Cadastro e login de usuários;
 - Quiz de preferências (não necessariamente de respostas certas ou erradas), com perguntas sobre personagem favorito, arco favorito, integrante favorito da Trupe Fantasma e outras preferências;
 - Dashboard coletiva com gráficos que apresentam a distribuição das respostas registradas no banco de dados.
+- Página de comunidade com fórum integrado ao banco de dados, permitindo que usuários logados publiquem mensagens e anexem até 4 fotos por publicação.
 
 ## Tecnologias
 
@@ -57,6 +58,9 @@ Diretório Query - /src/models
 - Não reescrever arquivos inteiros quando uma pequena/média alteração for suficiente;
 - A Dashboard deve utilizar respostas reais consultadas no MySQL, nunca estatísticas fixas inventadas no código;
 - Preservar ao máximo o estilo e a organização do código existente.
+- Exigir que o usuário esteja logado para criar publicações na comunidade;
+- Respeitar o limite máximo de 4 fotos por publicação;
+- Manter o fórum integrado ao banco de dados, preservando o armazenamento e a consulta das publicações reais.
 
 
 ## Regra geral: 
