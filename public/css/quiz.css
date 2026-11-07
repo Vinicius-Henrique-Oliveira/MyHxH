@@ -109,7 +109,7 @@ img {
   letter-spacing: -0.04em;
 }
 
-.quiz-hero__status > span {
+.quiz-hero__status>span {
   display: block;
   margin-top: 8px;
   color: rgba(245, 240, 228, 0.72);
@@ -313,14 +313,40 @@ img {
   background-position: center;
 }
 
-.quiz-option-card__image--gon,
-.quiz-option-card__image--killua,
-.quiz-option-card__image--kurapika,
-.quiz-option-card__image--netero,
+.quiz-option-card__image--gon {
+  background-image:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
+    url('../assets/imgs/Gon.png');
+}
+
+.quiz-option-card__image--killua {
+  background-image:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
+    url('../assets/imgs/Killua.png');
+}
+
+.quiz-option-card__image--kurapika {
+  background-image:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
+    url('../assets/imgs/Kurapika.png');
+}
+
+.quiz-option-card__image--netero {
+  background-image:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
+    url('../assets/imgs/Netero.png');
+}
+
 .quiz-option-card__image--hisoka {
   background-image:
     linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
-    url('../assets/imgs/Horizonte.png');
+    url('../assets/imgs/Hisoka.png');
+}
+
+.quiz-option-card__image--meruem {
+  background-image:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.16) 0%, rgba(10, 28, 20, 0.34) 100%),
+    url('../assets/imgs/Meruem.png');
 }
 
 .quiz-option-card__image--placeholder {
@@ -561,6 +587,7 @@ img {
 }
 
 @media (max-width: 920px) {
+
   .quiz-hero__content,
   .quiz-summary {
     grid-template-columns: 1fr;
