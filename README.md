@@ -10,6 +10,8 @@ Este projeto consiste no desenvolvimento de um site temático de **Hunter x Hunt
 
 As respostas registradas serão utilizadas para construir uma **dashboard coletiva**, com gráficos que representem as preferências dos participantes.
 
+Além disso, o site conta com uma **página de comunidade**, com um fórum integrado ao banco de dados. Nessa área, **usuários logados** podem publicar mensagens e anexar **até 4 fotos por publicação**.
+
 ## Objetivo
 
 Aplicar, na prática, os conteúdos estudados no primeiro semestre de ADS, principalmente desenvolvimento web, lógica de programação, banco de dados e integração entre frontend e backend.
@@ -21,6 +23,8 @@ Aplicar, na prática, os conteúdos estudados no primeiro semestre de ADS, princ
 3. O frontend envia as respostas para a API desenvolvida com Node.js e Express.
 4. A API processa as informações e as registra no MySQL.
 5. A dashboard consulta os resultados por meio da API e apresenta os dados em gráficos com Chart.js.
+6. Na comunidade, usuários logados podem criar publicações com mensagens e até 4 fotos.
+7. O fórum consulta as publicações armazenadas no banco de dados e as exibe na página de comunidade.
 
 ## Como executar (configuração inicial)
 
