@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyHxH | Quiz</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="stylesheet" href="./css/navbar&footer.css">
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__content">
+            <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+                <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
+                <div class="brand-copy">
+                    <strong>MyHxH</strong>
+                    <span>De fã para explorador</span>
+                </div>
+            </a>
+
+            <nav class="nav-center" aria-label="Navegação principal">
+                <ul class="navbar navbar--center">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#obra">O universo</a></li>
+                    <li><a href="quiz.html">Quiz de preferências</a></li>
+                    <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions" id="navActions"></div>
+        </div>
+    </header>
+
+    <main class="quiz-page" id="topo">
+        <section class="quiz-hero" aria-labelledby="quizHeroTitle">
+            <div class="container quiz-hero__content">
+                <div class="quiz-hero__intro">
+                    <span class="quiz-hero__eyebrow">Expedição pessoal / Quiz de preferências</span>
+                    <h1 id="quizHeroTitle">Seu universo. Suas escolhas.</h1>
+                    <p>Aqui não existe certo ou errado. Só os personagens e as histórias que ficaram com você.</p>
+                </div>
+
+                <div class="quiz-hero__status" aria-label="Progresso do quiz">
+                    <strong>03 / 03</strong>
+                    <span>Escolhas</span>
+                    <div class="quiz-hero__progress" aria-hidden="true">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <small>Tudo pronto para revisar</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-intro container" aria-label="Instruções do quiz">
+            <p>
+                <span aria-hidden="true">i</span>
+                Escolha uma opção por pergunta. Você pode mudar suas escolhas antes de enviar.
+            </p>
+        </section>
+
+        <section class="quiz-form container" aria-label="Quiz de preferências">
+            <form class="quiz-form__content" action="#" method="post">
+                <article class="quiz-question" aria-labelledby="question01Title">
+                    <header class="quiz-question__header">
+                        <div class="quiz-question__index" aria-hidden="true">01</div>
+                        <div class="quiz-question__copy">
+                            <h2 id="question01Title">Quem é seu personagem favorito?</h2>
+                            <p>Aquele que faz cada episódio valer a pena.</p>
+                        </div>
+                        <div class="quiz-question__meta">
+                            <span aria-hidden="true">◔</span>
+                            <small>1 selecionado</small>
+                        </div>
+                    </header>
+
+                    <div class="quiz-options quiz-options--cards" role="radiogroup" aria-label="Escolha do personagem favorito">
+                        <label class="quiz-option-card quiz-option-card--image">
+                            <input type="radio" name="personagemFavorito" value="gon" />
+                            <span class="quiz-option-card__image quiz-option-card__image--gon" aria-hidden="true"></span>
+                            <span class="quiz-option-card__body">
+                                <strong>Gon Freecss</strong>
+                                <span>Um coração aventureiro</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="quiz-option-card quiz-option-card--image is-selected" aria-current="true">
+                            <input type="radio" name="personagemFavorito" value="killua" checked />
+                            <span class="quiz-option-card__image quiz-option-card__image--killua" aria-hidden="true"></span>
+                            <span class="quiz-option-card__body">
+                                <strong>Killua Zoldyck</strong>
+                                <span>Lealdade sem limites</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="quiz-option-card quiz-option-card--image">
+                            <input type="radio" name="personagemFavorito" value="kurapika" />
+                            <span class="quiz-option-card__image quiz-option-card__image--kurapika" aria-hidden="true"></span>
+                            <span class="quiz-option-card__body">
+                                <strong>Kurapika</strong>
+                                <span>Uma promessa inabalável</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="quiz-option-card quiz-option-card--image">
+                            <input type="radio" name="personagemFavorito" value="leorio" />
+                            <span class="quiz-option-card__image quiz-option-card__image--leorio" aria-hidden="true"></span>
+                            <span class="quiz-option-card__body">
+                                <strong>Leorio</strong>
+                                <span>Muito além da aparência</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="quiz-option-card quiz-option-card--image">
+                            <input type="radio" name="personagemFavorito" value="hisoka" />
+                            <span class="quiz-option-card__image quiz-option-card__image--hisoka" aria-hidden="true"></span>
+                            <span class="quiz-option-card__body">
+                                <strong>Hisoka</strong>
+                                <span>Imprevisível por natureza</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+
+                        <label class="quiz-option-card quiz-option-card--placeholder">
+                            <input type="radio" name="personagemFavorito" value="outro" />
+                            <span class="quiz-option-card__image quiz-option-card__image--placeholder" aria-hidden="true">
+                                <span>◌</span>
+                            </span>
+                            <span class="quiz-option-card__body">
+                                <strong>Outro personagem</strong>
+                                <span>Meu favorito é outro</span>
+                            </span>
+                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                        </label>
+                    </div>
+                </article>
+
+                <article class="quiz-question" aria-labelledby="question02Title">
+                    <header class="quiz-question__header">
+                        <div class="quiz-question__index" aria-hidden="true">02</div>
+                        <div class="quiz-question__copy">
+                            <h2 id="question02Title">Qual arco mais marcou sua jornada?</h2>
+                            <p>Escolha a história que você viveria de novo.</p>
+                        </div>
+                        <div class="quiz-question__meta">
+                            <span aria-hidden="true">◔</span>
+                            <small>1 selecionado</small>
+                        </div>
+                    </header>
+
+                    <div class="quiz-options quiz-options--grid" role="radiogroup" aria-label="Escolha do arco favorito">
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="arcoFavorito" value="exame-hunter" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Exame Hunter</strong>
+                                <span>O começo de tudo</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="arcoFavorito" value="torre-celestial" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Torre Celestial</strong>
+                                <span>A descoberta do Nen</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill is-selected">
+                            <input type="radio" name="arcoFavorito" value="yorknew-city" checked />
+                            <span class="quiz-option-pill__body">
+                                <strong>Yorknew City</strong>
+                                <span>Correntes e promessas</span>
+                            </span>
+                            <span class="quiz-option-pill__badge">Escolhido</span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="arcoFavorito" value="greed-island" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Greed Island</strong>
+                                <span>Um jogo de verdade</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="arcoFavorito" value="formigas-quimera" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Formigas Quimera</strong>
+                                <span>Poder e humanidade</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="arcoFavorito" value="eleicao" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Eleição</strong>
+                                <span>Novos caminhos</span>
+                            </span>
+                        </label>
+                    </div>
+                </article>
+
+                <article class="quiz-question" aria-labelledby="question03Title">
+                    <header class="quiz-question__header">
+                        <div class="quiz-question__index" aria-hidden="true">03</div>
+                        <div class="quiz-question__copy">
+                            <h2 id="question03Title">E na Trupe Fantasma, quem é seu favorito?</h2>
+                            <p>Entre os integrantes abaixo, quem mais chama sua atenção?</p>
+                        </div>
+                        <div class="quiz-question__meta">
+                            <span aria-hidden="true">◔</span>
+                            <small>1 selecionado</small>
+                        </div>
+                    </header>
+
+                    <div class="quiz-options quiz-options--grid" role="radiogroup" aria-label="Escolha do membro da Trupe Fantasma">
+                        <label class="quiz-option-pill is-selected">
+                            <input type="radio" name="trupeFavorita" value="chrollo" checked />
+                            <span class="quiz-option-pill__body">
+                                <strong>Chrollo Lucilfer</strong>
+                                <span>O estrategista</span>
+                            </span>
+                            <span class="quiz-option-pill__badge">Escolhido</span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="trupeFavorita" value="feitan" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Feitan</strong>
+                                <span>A presença silenciosa</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="trupeFavorita" value="machi" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Machi</strong>
+                                <span>Fios que conectam</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="trupeFavorita" value="nobunaga" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Nobunaga</strong>
+                                <span>O espadachim</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="trupeFavorita" value="shizuku" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Shizuku</strong>
+                                <span>O inesperado</span>
+                            </span>
+                        </label>
+
+                        <label class="quiz-option-pill">
+                            <input type="radio" name="trupeFavorita" value="phinks" />
+                            <span class="quiz-option-pill__body">
+                                <strong>Phinks</strong>
+                                <span>Força em movimento</span>
+                            </span>
+                        </label>
+                    </div>
+                </article>
+
+                <section class="quiz-summary" aria-labelledby="quizSummaryTitle">
+                    <div class="quiz-summary__copy">
+                        <span class="quiz-summary__eyebrow">Suas escolhas estão prontas</span>
+                        <h2 id="quizSummaryTitle">Killua Zoldyck · Yorknew City · Chrollo Lucilfer</h2>
+                    </div>
+
+                    <div class="quiz-summary__actions">
+                        <button type="button" class="quiz-button quiz-button--secondary" onclick="window.location.href='comunidade.html'">Ver a comunidade</button>
+                        <button type="button" class="quiz-button quiz-button--primary">Registrar preferências</button>
+                    </div>
+                </section>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer-brand">
+                <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+                    <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
+                    <div class="brand-copy">
+                        <strong>MyHxH</strong>
+                        <span>De fã para explorador</span>
+                    </div>
+                </a>
+                <p>Para quem sabe que a melhor parte é o caminho.</p>
+            </div>
+
+            <ul class="footer-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#obra">O universo</a></li>
+                <li><a href="quiz.html">Quiz de preferências</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+            </ul>
+
+            <div class="footer-note">
+                <span>Sem fins lucrativos</span>
+                <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <h4>Projeto de fã não oficial. Hunter x Hunter é obra de Yoshihiro Togashi. Todos os direitos são dos seus respectivos titulares.</h4>
+            <span>MyHxH &copy; 2026</span>
+        </div>
+    </footer>
+
+    <script>
+
+        function navbar_usuario() {
+            const nome = sessionStorage.NOME_USUARIO;
+
+            if (nome) {
+                const primeiro_nome = nome.split(" ")[0];
+
+                navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
+                            <button onclick="limparSessao()">Sair</button>`;
+            } else {
+                navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
+                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+            }
+        }
+
+        navbar_usuario();
+        
+    </script>
+
+</body>
+
+</html>
