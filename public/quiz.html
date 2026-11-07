@@ -82,10 +82,12 @@
                         </div>
                     </header>
 
-                    <div class="quiz-options quiz-options--cards" role="radiogroup" aria-label="Escolha do personagem favorito">
+                    <div class="quiz-options quiz-options--cards" role="radiogroup"
+                        aria-label="Escolha do personagem favorito">
                         <label class="quiz-option-card quiz-option-card--image">
-                            <input type="radio" name="personagemFavorito" value="gon" />
-                            <span class="quiz-option-card__image quiz-option-card__image--gon" aria-hidden="true"></span>
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="gon" />
+                            <span class="quiz-option-card__image quiz-option-card__image--gon"
+                                aria-hidden="true"></span>
                             <span class="quiz-option-card__body">
                                 <strong>Gon Freecss</strong>
                                 <span>Um coração aventureiro</span>
@@ -93,9 +95,10 @@
                             <span class="quiz-option-card__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image is-selected" aria-current="true">
-                            <input type="radio" name="personagemFavorito" value="killua" checked />
-                            <span class="quiz-option-card__image quiz-option-card__image--killua" aria-hidden="true"></span>
+                        <label class="quiz-option-card quiz-option-card--image">
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="killua" checked />
+                            <span class="quiz-option-card__image quiz-option-card__image--killua"
+                                aria-hidden="true"></span>
                             <span class="quiz-option-card__body">
                                 <strong>Killua Zoldyck</strong>
                                 <span>Lealdade sem limites</span>
@@ -104,8 +107,9 @@
                         </label>
 
                         <label class="quiz-option-card quiz-option-card--image">
-                            <input type="radio" name="personagemFavorito" value="kurapika" />
-                            <span class="quiz-option-card__image quiz-option-card__image--kurapika" aria-hidden="true"></span>
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="kurapika" />
+                            <span class="quiz-option-card__image quiz-option-card__image--kurapika"
+                                aria-hidden="true"></span>
                             <span class="quiz-option-card__body">
                                 <strong>Kurapika</strong>
                                 <span>Uma promessa inabalável</span>
@@ -114,8 +118,9 @@
                         </label>
 
                         <label class="quiz-option-card quiz-option-card--image">
-                            <input type="radio" name="personagemFavorito" value="leorio" />
-                            <span class="quiz-option-card__image quiz-option-card__image--leorio" aria-hidden="true"></span>
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="leorio" />
+                            <span class="quiz-option-card__image quiz-option-card__image--leorio"
+                                aria-hidden="true"></span>
                             <span class="quiz-option-card__body">
                                 <strong>Leorio</strong>
                                 <span>Muito além da aparência</span>
@@ -124,8 +129,9 @@
                         </label>
 
                         <label class="quiz-option-card quiz-option-card--image">
-                            <input type="radio" name="personagemFavorito" value="hisoka" />
-                            <span class="quiz-option-card__image quiz-option-card__image--hisoka" aria-hidden="true"></span>
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="hisoka" />
+                            <span class="quiz-option-card__image quiz-option-card__image--hisoka"
+                                aria-hidden="true"></span>
                             <span class="quiz-option-card__body">
                                 <strong>Hisoka</strong>
                                 <span>Imprevisível por natureza</span>
@@ -134,8 +140,9 @@
                         </label>
 
                         <label class="quiz-option-card quiz-option-card--placeholder">
-                            <input type="radio" name="personagemFavorito" value="outro" />
-                            <span class="quiz-option-card__image quiz-option-card__image--placeholder" aria-hidden="true">
+                            <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="outro" />
+                            <span class="quiz-option-card__image quiz-option-card__image--placeholder"
+                                aria-hidden="true">
                                 <span>◌</span>
                             </span>
                             <span class="quiz-option-card__body">
@@ -160,9 +167,10 @@
                         </div>
                     </header>
 
-                    <div class="quiz-options quiz-options--grid" role="radiogroup" aria-label="Escolha do arco favorito">
+                    <div class="quiz-options quiz-options--grid" role="radiogroup"
+                        aria-label="Escolha do arco favorito">
                         <label class="quiz-option-pill">
-                            <input type="radio" name="arcoFavorito" value="exame-hunter" />
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="exame-hunter" />
                             <span class="quiz-option-pill__body">
                                 <strong>Exame Hunter</strong>
                                 <span>O começo de tudo</span>
@@ -170,15 +178,15 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="arcoFavorito" value="torre-celestial" />
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="torre-celestial" />
                             <span class="quiz-option-pill__body">
                                 <strong>Torre Celestial</strong>
                                 <span>A descoberta do Nen</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill is-selected">
-                            <input type="radio" name="arcoFavorito" value="yorknew-city" checked />
+                        <label class="quiz-option-pill">
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="yorknew-city" checked />
                             <span class="quiz-option-pill__body">
                                 <strong>Yorknew City</strong>
                                 <span>Correntes e promessas</span>
@@ -187,7 +195,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="arcoFavorito" value="greed-island" />
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="greed-island" />
                             <span class="quiz-option-pill__body">
                                 <strong>Greed Island</strong>
                                 <span>Um jogo de verdade</span>
@@ -195,7 +203,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="arcoFavorito" value="formigas-quimera" />
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="formigas-quimera" />
                             <span class="quiz-option-pill__body">
                                 <strong>Formigas Quimera</strong>
                                 <span>Poder e humanidade</span>
@@ -203,7 +211,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="arcoFavorito" value="eleicao" />
+                            <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="eleicao" />
                             <span class="quiz-option-pill__body">
                                 <strong>Eleição</strong>
                                 <span>Novos caminhos</span>
@@ -225,9 +233,10 @@
                         </div>
                     </header>
 
-                    <div class="quiz-options quiz-options--grid" role="radiogroup" aria-label="Escolha do membro da Trupe Fantasma">
-                        <label class="quiz-option-pill is-selected">
-                            <input type="radio" name="trupeFavorita" value="chrollo" checked />
+                    <div class="quiz-options quiz-options--grid" role="radiogroup"
+                        aria-label="Escolha do membro da Trupe Fantasma">
+                        <label class="quiz-option-pill">
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="chrollo" checked />
                             <span class="quiz-option-pill__body">
                                 <strong>Chrollo Lucilfer</strong>
                                 <span>O estrategista</span>
@@ -236,7 +245,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="trupeFavorita" value="feitan" />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="feitan" />
                             <span class="quiz-option-pill__body">
                                 <strong>Feitan</strong>
                                 <span>A presença silenciosa</span>
@@ -244,7 +253,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="trupeFavorita" value="machi" />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="machi" />
                             <span class="quiz-option-pill__body">
                                 <strong>Machi</strong>
                                 <span>Fios que conectam</span>
@@ -252,7 +261,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="trupeFavorita" value="nobunaga" />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="nobunaga" />
                             <span class="quiz-option-pill__body">
                                 <strong>Nobunaga</strong>
                                 <span>O espadachim</span>
@@ -260,7 +269,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="trupeFavorita" value="shizuku" />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="shizuku" />
                             <span class="quiz-option-pill__body">
                                 <strong>Shizuku</strong>
                                 <span>O inesperado</span>
@@ -268,7 +277,7 @@
                         </label>
 
                         <label class="quiz-option-pill">
-                            <input type="radio" name="trupeFavorita" value="phinks" />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="phinks" />
                             <span class="quiz-option-pill__body">
                                 <strong>Phinks</strong>
                                 <span>Força em movimento</span>
@@ -280,11 +289,12 @@
                 <section class="quiz-summary" aria-labelledby="quizSummaryTitle">
                     <div class="quiz-summary__copy">
                         <span class="quiz-summary__eyebrow">Suas escolhas estão prontas</span>
-                        <h2 id="quizSummaryTitle">Killua Zoldyck · Yorknew City · Chrollo Lucilfer</h2>
+                        <div id="div_result"></div>
                     </div>
 
                     <div class="quiz-summary__actions">
-                        <button type="button" class="quiz-button quiz-button--secondary" onclick="window.location.href='comunidade.html'">Ver a comunidade</button>
+                        <button type="button" class="quiz-button quiz-button--secondary"
+                            onclick="window.location.href='comunidade.html'">Ver a comunidade</button>
                         <button type="button" class="quiz-button quiz-button--primary">Registrar preferências</button>
                     </div>
                 </section>
@@ -318,7 +328,8 @@
             </div>
         </div>
         <div class="container footer__bottom">
-            <h4>Projeto de fã não oficial. Hunter x Hunter é obra de Yoshihiro Togashi. Todos os direitos são dos seus respectivos titulares.</h4>
+            <h4>Projeto de fã não oficial. Hunter x Hunter é obra de Yoshihiro Togashi. Todos os direitos são dos seus
+                respectivos titulares.</h4>
             <span>MyHxH &copy; 2026</span>
         </div>
     </footer>
@@ -340,7 +351,18 @@
         }
 
         navbar_usuario();
-        
+
+        function atualizarResultado() {
+
+            const personagem = document.querySelector('input[name="personagemFavorito"]:checked');
+            const arco = document.querySelector('input[name="arcoFavorito"]:checked');
+            const trupe = document.querySelector('input[name="trupeFavorita"]:checked');
+
+            div_result.innerHTML = `${personagem.value} · ${arco.value} · ${trupe.value}`;
+
+        }
+
+
     </script>
 
 </body>
