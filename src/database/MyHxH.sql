@@ -50,7 +50,6 @@ CREATE TABLE alternativa (
 
 CREATE TABLE resposta (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    fk_usuario INT NOT NULL,
     fk_alternativa INT NOT NULL,
     respondido_em TIMESTAMP NOT NULL
         DEFAULT CURRENT_TIMESTAMP,
