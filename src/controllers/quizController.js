@@ -5,8 +5,9 @@ function cadastrar(req, res) {
     const personagem = req.body.personagem;
     const arco = req.body.arco;
     const trupe = req.body.trupe;
+    const idUsuario = parseInt(req.body.idUsuario);
 
-    quizModel.cadastrar(personagem, arco, trupe)
+    quizModel.cadastrar(personagem, arco, trupe, idUsuario)
         .then(function (resultado) {
             res.json(resultado);
         })

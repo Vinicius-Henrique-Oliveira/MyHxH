@@ -373,9 +373,15 @@
             const personagem = document.querySelector('input[name="personagemFavorito"]:checked');
             const arco = document.querySelector('input[name="arcoFavorito"]:checked');
             const trupe = document.querySelector('input[name="trupeFavorita"]:checked');
+            const idUsuario = sessionStorage.ID_USUARIO;
 
+            if (!idUsuario) {
+                alert("Você precisa estar logado para responder o quiz.")
+                return;
+            }
 
             const dadosQuiz = {
+                idUsuario: idUsuario,
                 personagem: personagem.value,
                 arco: arco.value,
                 trupe: trupe.value

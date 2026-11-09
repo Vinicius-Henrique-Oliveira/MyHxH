@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function cadastrar(idUsuario, personagem, arco, trupe) {
+function cadastrar(personagem, arco, trupe, idUsuario) {
 
     var instrucaoPost = `
         INSERT INTO resposta (resposta, fk_pergunta, fk_usuario)
