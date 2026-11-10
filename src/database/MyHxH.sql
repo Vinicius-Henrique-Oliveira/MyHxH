@@ -38,7 +38,6 @@ CREATE TABLE pergunta (
     ativa BOOLEAN NOT NULL DEFAULT TRUE
 );
 
-
 CREATE TABLE resposta (
     id INT PRIMARY KEY AUTO_INCREMENT,
     resposta VARCHAR(45),
@@ -55,3 +54,16 @@ INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
 (1, 'Qual é o seu protagonista favorito?', 1),
 (2, 'Qual é o seu arco favorito?', 2),
 (3, 'Quem é seu integrante favorito da Trupe Fantasma?', 3);
+
+SELECT * FROM usuario;
+SELECT * FROM resposta;
+
+SELECT 
+	u.nome 'Nome',
+    p.enunciado 'Pergunta',
+    r.resposta 'Reposta'
+FROM usuario u
+	JOIN resposta r
+    ON r.fk_usuario = u.id
+    JOIN pergunta p
+    ON p.id = r.fk_pergunta;
