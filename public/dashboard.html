@@ -2,79 +2,195 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Simulador</title>
+  <title>MyHxH | Dashboard coletiva</title>
 
-    <script src="./js/sessao.js"></script>
+  <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/navbar&footer.css">
+  <link rel="icon" href="./assets/icon/favicon2.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
 <body>
-
-    <!--header inicio-->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">Inicial</a>
-                </li>
-                <li class="agora">Simulador</li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./login.html">Cadastro</a>
-                </li>
-            </ul>
+  <header class="header">
+    <div class="container header__content">
+      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+        <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
+        <div class="brand-copy">
+          <strong>MyHxH</strong>
+          <span>De fã para explorador</span>
         </div>
+
+      </a>
+
+      <nav class="nav-center" aria-label="Navegação principal">
+        <ul class="navbar navbar--center">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#obra">O universo</a></li>
+          <li><a href="quiz.html">Quiz de preferências</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions" id="navActions">
+      </div>
     </div>
+  </header>
 
+  <main class="dashboard-page" id="topo">
+    <section class="dashboard-hero container" aria-labelledby="dashboardHeroTitle">
+      <div class="dashboard-hero__copy">
+        <span class="dashboard-hero__eyebrow">Observatório / Dashboard coletiva</span>
+        <h1 id="dashboardHeroTitle">O retrato da nossa comunidade.</h1>
+        <p>Personagens, histórias e conexões. Veja como se distribuem as preferências dos fãs.</p>
+      </div>
 
-    <!-- simulador inicio -->
-    <div class="simulador">
-        <div class="container">
-            <h2>Simulador</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
+      <a class="dashboard-hero__cta" href="quiz.html">Responder ao quiz</a>
+    </section>
 
+    <section class="dashboard-stats container" aria-label="Resumo da comunidade">
+      <article class="dashboard-stat-card">
+        <span class="dashboard-stat-card__label">Participantes</span>
+        <strong class="dashboard-stat-card__value" id="totalParticipantes">--</strong>
+        <p class="dashboard-stat-card__text">Pessoas com respostas registradas no banco.</p>
+      </article>
+
+      <article class="dashboard-stat-card">
+        <span class="dashboard-stat-card__label">Preferências</span>
+        <strong class="dashboard-stat-card__value" id="totalPreferencias">--</strong>
+        <p class="dashboard-stat-card__text">Uma resposta por pessoa em cada pergunta.</p>
+      </article>
+
+      <article class="dashboard-stat-card">
+        <span class="dashboard-stat-card__label">Questionários completos</span>
+        <strong class="dashboard-stat-card__value" id="totalQuestionarios">--%</strong>
+        <p class="dashboard-stat-card__text">Percentual de quem respondeu todas as perguntas.</p>
+      </article>
+    </section>
+
+    <section class="dashboard-grid container" aria-label="Distribuição das respostas">
+      <article class="dashboard-card dashboard-card--wide">
+        <header class="dashboard-card__header">
+          <div>
+            <span class="dashboard-card__eyebrow">Pergunta 01</span>
+            <h2>Personagem favorito</h2>
+          </div>
+          <span class="dashboard-card__meta">-- respostas</span>
+        </header>
+
+        <p class="dashboard-card__lead">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da comunidade.</p>
+
+        <div class="dashboard-chart-box" id="graficoPersonagem" aria-label="Espaço para o gráfico de personagem favorito"></div>
+      </article>
+
+      <article class="dashboard-card">
+        <header class="dashboard-card__header">
+          <div>
+            <span class="dashboard-card__eyebrow">Pergunta 02</span>
+            <h2>Arco favorito</h2>
+          </div>
+          <span class="dashboard-card__meta">-- respostas</span>
+        </header>
+
+        <p class="dashboard-card__lead">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
+
+        <div class="dashboard-chart-box dashboard-chart-box--short" id="graficoArco" aria-label="Espaço para o gráfico de arco favorito"></div>
+      </article>
+
+      <article class="dashboard-card dashboard-card--wide dashboard-card--bottom">
+        <header class="dashboard-card__header">
+          <div>
+            <span class="dashboard-card__eyebrow">Pergunta 03</span>
+            <h2>Integrante favorito da Trupe Fantasma</h2>
+          </div>
+          <span class="dashboard-card__meta">-- respostas</span>
+        </header>
+
+        <p class="dashboard-card__lead">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
+
+        <div class="dashboard-chart-box dashboard-chart-box--ring" id="graficoTrupe" aria-label="Espaço para o gráfico da Trupe Fantasma"></div>
+      </article>
+
+      <aside class="dashboard-notes" aria-label="Notas do observatório">
+        <span class="dashboard-notes__eyebrow">Notas do observatório</span>
+        <h2>Leituras rápidas para orientar a dashboard.</h2>
+
+        <div class="dashboard-notes__item">
+          <strong>Uma pessoa, três escolhas</strong>
+          <p>Cada participante escolhe um personagem, um arco e um integrante da Trupe.</p>
         </div>
-    </div>
-    <!-- simulador fim -->
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
+        <div class="dashboard-notes__item">
+          <strong>Mesma base em cada gráfico</strong>
+          <p>As porcentagens devem partir das respostas reais armazenadas no MySQL.</p>
         </div>
-    </div>
-    <!--footer fim-->
 
+        <div class="dashboard-notes__item">
+          <strong>Preferência não é competição</strong>
+          <p>Não existe resposta certa, só diferentes formas de se conectar com a obra.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+          <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
+          <div class="brand-copy">
+            <strong>MyHxH</strong>
+            <span>De fã para explorador</span>
+          </div>
+        </a>
+        <p>Para quem sabe que a melhor parte é o caminho.</p>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#obra">O universo</a></li>
+        <li><a href="quiz.html">Quiz de preferências</a></li>
+        <li><a href="comunidade.html">Comunidade</a></li>
+      </ul>
+
+      <div class="footer-note">
+        <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
+      <span>MyHxH &copy; 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    function navbar_usuario() {
+
+      const nome = sessionStorage.NOME_USUARIO;
+
+      if (nome) {
+
+        const primeiro_nome = nome.split(" ")[0];
+
+        navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
+                              <button onclick="limparSessao()">Sair</button>`;
+
+      } else {
+
+        navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
+                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+
+      }
+
+    }
+
+    navbar_usuario();
+  </script>
 
 </body>
 
