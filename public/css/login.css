@@ -164,57 +164,9 @@
 .hero-visual {
   position: relative;
   display: flex;
-  align-items: flex-end;
   min-height: 100%;
-  padding: 32px;
-  background-image: linear-gradient(180deg, rgba(7, 27, 19, 0.18) 0%, rgba(7, 27, 19, 0.06) 42%, rgba(7, 27, 19, 0.84) 100%), url('../assets/imgs/Montanha.png');
+  padding: 0;
+  background-image: url('../assets/imgs/Montanha.png');
   background-size: cover;
   background-position: center;
-  color: #fff;
-}
-
-.hero-visual__label {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  padding: 8px 12px;
-  background: rgba(244, 241, 231, 0.95);
-  color: var(--verde-principal);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-visual__overlay {
-  position: relative;
-  max-width: 620px;
-}
-
-.hero-visual__eyebrow {
-  margin: 0 0 12px;
-  color: rgba(244, 241, 231, 0.86);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero-visual h2 {
-  margin: 0;
-  font-size: 3.6rem;
-  line-height: 1;
-  color: #f7f2e8;
-}
-
-.hero-visual__meta {
-  margin-top: 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(244, 241, 231, 0.16);
-  color: rgba(244, 241, 231, 0.78);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
