@@ -16,6 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <body>
   <header class="header">
     <div class="container header__content">
@@ -84,9 +86,12 @@
           <span class="dashboard-card__meta">-- respostas</span>
         </header>
 
-        <p class="dashboard-card__lead">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da comunidade.</p>
+        <p class="dashboard-card__lead">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da
+          comunidade.</p>
 
-        <div class="dashboard-chart-box" id="graficoPersonagem" aria-label="Espaço para o gráfico de personagem favorito"></div>
+        <div class="dashboard-chart-box" id="graficoPersonagem">
+          <canvas id="Personagem"></canvas>
+        </div>
       </article>
 
       <article class="dashboard-card">
@@ -100,7 +105,9 @@
 
         <p class="dashboard-card__lead">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
 
-        <div class="dashboard-chart-box dashboard-chart-box--short" id="graficoArco" aria-label="Espaço para o gráfico de arco favorito"></div>
+        <div class="dashboard-chart-box dashboard-chart-box--short" id="graficoArco">
+          <canvas id="Arco"></canvas>
+        </div>
       </article>
 
       <article class="dashboard-card dashboard-card--wide dashboard-card--bottom">
@@ -114,7 +121,9 @@
 
         <p class="dashboard-card__lead">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
 
-        <div class="dashboard-chart-box dashboard-chart-box--ring" id="graficoTrupe" aria-label="Espaço para o gráfico da Trupe Fantasma"></div>
+        <div class="dashboard-chart-box dashboard-chart-box--ring" id="graficoTrupe">
+          <canvas id="Trupe"></canvas>
+        </div>
       </article>
 
       <aside class="dashboard-notes" aria-label="Notas do observatório">
@@ -170,6 +179,128 @@
   </footer>
 
   <script>
+
+
+    const grafico1 = document.getElementById('Personagem');
+    const cores1 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
+    const votos1 = [12, 19, 3, 5, 2, 3];
+
+    let maior1 = votos1[0]
+    let ax_maior1 = 0;
+
+    for (let i = 0; i < votos1.length; i++) {
+
+      if (votos1[i] > maior1) {
+        maior1 = votos1[i]
+        ax_maior1 = i;
+      }
+
+    }
+
+    cores1[ax_maior1] = '#D97A3C';
+
+    new Chart(grafico1, {
+      type: 'bar',
+      data: {
+        labels: ['Gon Freecss', 'Killua Zoldyck', 'Kurapika', 'Netero', 'Hisoka', 'Meruem'],
+        datasets: [{
+          label: 'Votos',
+          data: votos1,
+          borderWidth: 1,
+          backgroundColor: cores1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    const grafico2 = document.getElementById('Arco');
+    const cores2 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
+    const votos2 = [12, 19, 3, 5, 2, 3];
+
+    let maior2 = votos2[0]
+    let ax_maior2 = 0;
+
+    for (let i = 0; i < votos2.length; i++) {
+
+      if (votos2[i] > maior2) {
+        maior2 = votos2[i]
+        ax_maior2 = i;
+      }
+
+    }
+
+    cores2[ax_maior2] = '#D97A3C';
+
+
+    new Chart(grafico2, {
+      type: 'bar',
+      data: {
+        labels: ['Exame Hunter', 'Torre Celestial', 'Yorknew City', 'Greed Island', 'Formigas Quimera', 'Eleição'],
+        datasets: [{
+          label: 'Votos',
+          data: votos2,
+          borderWidth: 1,
+          backgroundColor: cores2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const grafico3 = document.getElementById('Trupe');
+    const votos3 = [12, 19, 3, 5, 2, 3];
+    const cores3 = ['#7E9E70', '#163E32', '#7E9E70', '#A8B991', '#CFA06B', '#C6D0BD']
+    let maior3 = votos3[0]
+    let ax_maior3 = 0;
+
+    for (let i = 0; i < votos3.length; i++) {
+
+      if (votos3[i] > maior3) {
+        maior3 = votos3[i]
+        ax_maior3 = i;
+      }
+
+    }
+
+    cores3[ax_maior3] = '#D97A3C';
+
+    new Chart(grafico3, {
+      type: 'doughnut',
+      data: {
+        labels: ['Chrollo', 'Feitan', 'Machi', 'Nobunaga', 'Shizuku', 'Phinks'],
+        datasets: [{
+          label: 'Votos,',
+          data: votos3,
+          borderWidth: 1,
+          backgroundColor: cores3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
     function navbar_usuario() {
 
       const nome = sessionStorage.NOME_USUARIO;

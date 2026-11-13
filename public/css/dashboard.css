@@ -110,6 +110,7 @@
 
 .dashboard-card,
 .dashboard-notes {
+  margin-top: 20px;
   min-width: 0;
   border: 1px solid rgba(22, 62, 50, 0.12);
   border-radius: 10px;
@@ -170,7 +171,7 @@
 }
 
 .dashboard-chart-box--short {
-  min-height: 250px;
+  min-height: 280px;
 }
 
 .dashboard-chart-box--ring {
@@ -213,30 +214,4 @@
 .dashboard-card--wide .dashboard-chart-box,
 .dashboard-card--bottom .dashboard-chart-box {
   min-height: 300px;
-}
-
-@media (max-width: 1080px) {
-  .dashboard-hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dashboard-stats,
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-card--wide,
-  .dashboard-notes {
-    grid-column: auto;
-  }
-
-  .dashboard-notes {
-    min-height: auto;
-  }
-
-  .dashboard-card--wide,
-  .dashboard-card--bottom {
-    min-height: auto;
-  }
 }
