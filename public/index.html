@@ -177,9 +177,22 @@
         </div>
 
       </div>
+      
+      <div class="spotify">
+
+        <h2>A opening que marcou gerações.</h2>
+
+        <iframe class="musica" data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/4SNgX7KKnhksuHBy1gdSu1?utm_source=generator&theme=0&si=2dc482313c254657"
+          width="80%" height="152" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+      </div>
 
       <div class="part3-main">
-
+        
+        
         <div class="row-part3">
 
           <div class="text-part3">
@@ -222,6 +235,7 @@
         </div>
 
       </div>
+
 
       <div class="part4-main">
 
@@ -283,12 +297,12 @@
 
       const nome = sessionStorage.NOME_USUARIO;
 
-      if (nome) { 
+      if (nome) {
 
         const primeiro_nome = nome.split(" ")[0]
 
         navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
-                                <button onclick="limparSessao()">Sair</button>`        
+                                <button onclick="limparSessao()">Sair</button>`
 
       } else {
 

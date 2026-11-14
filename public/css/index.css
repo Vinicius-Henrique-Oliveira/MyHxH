@@ -28,7 +28,7 @@
 .little-part4 {
   display: block;
   margin-bottom: 12px;
-  color: rgba(245, 240, 228, 0.78);
+  color: var(--verde-principal);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -220,6 +220,25 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 50px;
   margin-top: 50px;
+}
+
+.spotify {
+  width: 100%;
+  background: var(--section-soft);
+  padding: 10px;
+}
+
+.spotify h2 {
+  justify-self: center;
+  margin-bottom: 25px;
+  color: var(--verde-principal);
+  font-size: 1.8rem;
+  line-height: 1.08;
+}
+
+.musica {
+  display: flex;
+  justify-self: center;
 }
 
 .rowIMG > div {
