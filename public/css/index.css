@@ -21,7 +21,6 @@
   max-width: 560px;
 }
 
-.column-main > span:first-child,
 .title-part1,
 .text-part2 > span,
 .text-part3 > span,
@@ -350,11 +349,22 @@
   font-size: 3.6rem;
 }
 
+
 .text-column4 > span:not(.little-part4) {
   max-width: 44rem;
   color: rgba(244, 241, 231, 0.76);
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+.title-column {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f6f1e5;
 }
 
 .text-column4 button {
