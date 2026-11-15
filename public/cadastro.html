@@ -18,7 +18,7 @@
 
 <body>
 
-  <header class="header">
+  <div class="header">
     <div class="container header__content">
       <a class="brand" href="index.html" aria-label="Ir para a página inicial">
         <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
@@ -29,7 +29,7 @@
 
       </a>
 
-      <nav class="nav-center" aria-label="Navegação principal">
+      <div class="nav-center" aria-label="Navegação principal">
         <ul class="navbar navbar--center">
           <li><a href="index.html">Início</a></li>
           <li><a href="index.html#obra">O universo</a></li>
@@ -37,18 +37,18 @@
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="comunidade.html">Comunidade</a></li>
         </ul>
-      </nav>
+      </div>
 
       <div class="nav-actions">
         <a class="nav-link" href="login.html">Entrar</a>
         <a class="nav-cta" href="cadastro.html">Criar conta</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="page page--cadastro">
+  <div class="page--cadastro">
     <div class="container cadastro-layout">
-      <section class="card card-cadastro">
+      <div class="card-cadastro">
         <span class="intro-badge">Sua primeira expedição</span>
         <h1>O próximo Hunter pode ser você.</h1>
         <p class="intro-text">
@@ -95,14 +95,13 @@
         </div>
 
         <div id="div_erros_login"></div>
-      </section>
+      </div>
 
-      <aside class="hero-visual" aria-label="Imagem temática">
-      </aside>
+      <div class="hero-visual" aria-label="Imagem temática"></div>
     </div>
-  </main>
+  </div>
 
-  <footer class="footer">
+  <div class="footer">
     <div class="container footer__content">
       <div class="footer-brand">
         <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
@@ -130,7 +129,7 @@
       <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
       <span>MyHxH &copy; 2026</span>
     </div>
-  </footer>
+  </div>
 
 </body>
 
@@ -231,7 +230,7 @@
   function validacao() {
 
     let senha = senha_input.value;
-    let caracteres_especiais = '!@#$%&*"'
+    let caracteres_especiais = '!@#$%&*-_"'
 
     let tem_especial = false;
 

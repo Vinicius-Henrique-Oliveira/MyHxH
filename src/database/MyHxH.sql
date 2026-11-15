@@ -51,12 +51,13 @@ CREATE TABLE resposta (
 );
 
 INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
-(1, 'Qual é o seu protagonista favorito?', 1),
+(1, 'Qual é o seu personagem favorito?', 1),
 (2, 'Qual é o seu arco favorito?', 2),
 (3, 'Quem é seu integrante favorito da Trupe Fantasma?', 3);
 
 SELECT * FROM usuario;
 SELECT * FROM resposta;
+SELECT * FROM pergunta;
 
 SELECT 
 	u.nome 'Nome',
@@ -67,3 +68,4 @@ FROM usuario u
     ON r.fk_usuario = u.id
     JOIN pergunta p
     ON p.id = r.fk_pergunta;
+    

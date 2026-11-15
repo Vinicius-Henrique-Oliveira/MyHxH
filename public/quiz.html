@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <div class="header">
         <div class="container header__content">
             <a class="brand" href="index.html" aria-label="Ir para a página inicial">
                 <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
@@ -27,7 +27,7 @@
                 </div>
             </a>
 
-            <nav class="nav-center" aria-label="Navegação principal">
+            <div class="nav-center" aria-label="Navegação principal">
                 <ul class="navbar navbar--center">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="index.html#obra">O universo</a></li>
@@ -35,14 +35,14 @@
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="comunidade.html">Comunidade</a></li>
                 </ul>
-            </nav>
+            </div>
 
             <div class="nav-actions" id="navActions"></div>
         </div>
-    </header>
+    </div>
 
-    <main class="quiz-page" id="topo">
-        <section class="quiz-hero" aria-labelledby="quizHeroTitle">
+    <div class="quiz-page" id="topo">
+        <div class="quiz-hero" aria-labelledby="quizHeroTitle">
             <div class="container quiz-hero__content">
                 <div class="quiz-hero__intro">
                     <span class="quiz-hero__eyebrow">Expedição pessoal / Quiz de preferências</span>
@@ -59,29 +59,29 @@
                     <small>Tudo pronto para revisar</small>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="quiz-intro container" aria-label="Instruções do quiz">
+        <div class="quiz-intro container" aria-label="Instruções do quiz">
             <p>
                 <span aria-hidden="true">i</span>
                 Escolha uma opção por pergunta. Você pode mudar suas escolhas antes de enviar.
             </p>
-        </section>
+        </div>
 
-        <section class="quiz-form container" aria-label="Quiz de preferências">
-            <form class="quiz-form__content" action="#" method="post">
-                <article class="quiz-question" aria-labelledby="question01Title">
-                    <header class="quiz-question__header">
+        <div class="quiz-form container">
+            <div class="quiz-form__content">
+                <div class="quiz-question">
+                    <div class="quiz-question__header">
                         <div class="quiz-question__index" aria-hidden="true">01</div>
                         <div class="quiz-question__copy">
-                            <h2 id="question01Title">Quem é seu personagem favorito?</h2>
+                            <h2>Quem é seu personagem favorito?</h2>
                             <p>Aquele que faz cada episódio valer a pena.</p>
                         </div>
                         <div class="quiz-question__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
-                    </header>
+                    </div>
 
                     <div class="quiz-options quiz-options--cards" role="radiogroup"
                         aria-label="Escolha do personagem favorito">
@@ -156,20 +156,20 @@
                             <span class="quiz-option-card__radio" aria-hidden="true"></span>
                         </label>
                     </div>
-                </article>
+                </div>
 
-                <article class="quiz-question" aria-labelledby="question02Title">
-                    <header class="quiz-question__header">
+                <div class="quiz-question">
+                    <div class="quiz-question__header">
                         <div class="quiz-question__index" aria-hidden="true">02</div>
                         <div class="quiz-question__copy">
-                            <h2 id="question02Title">Qual arco mais marcou sua jornada?</h2>
+                            <h2>Qual arco mais marcou sua jornada?</h2>
                             <p>Escolha a história que você viveria de novo.</p>
                         </div>
                         <div class="quiz-question__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
-                    </header>
+                    </div>
 
                     <div class="quiz-options quiz-options--grid" role="radiogroup"
                         aria-label="Escolha do arco favorito">
@@ -226,26 +226,25 @@
                             </span>
                         </label>
                     </div>
-                </article>
+                </div>
 
-                <article class="quiz-question" aria-labelledby="question03Title">
-                    <header class="quiz-question__header">
+                <div class="quiz-question">
+                    <div class="quiz-question__header">
                         <div class="quiz-question__index" aria-hidden="true">03</div>
                         <div class="quiz-question__copy">
-                            <h2 id="question03Title">E na Trupe Fantasma, quem é seu favorito?</h2>
+                            <h2>E na Trupe Fantasma, quem é seu favorito?</h2>
                             <p>Entre os integrantes abaixo, quem mais chama sua atenção?</p>
                         </div>
                         <div class="quiz-question__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
-                    </header>
+                    </div>
 
                     <div class="quiz-options quiz-options--grid" role="radiogroup"
                         aria-label="Escolha do membro da Trupe Fantasma">
                         <label class="quiz-option-pill">
-                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Chrollo"
-                                checked />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Chrollo" checked />
                             <span class="quiz-option-pill__body">
                                 <strong>Chrollo Lucilfer</strong>
                                 <span>O estrategista</span>
@@ -292,9 +291,9 @@
                             </span>
                         </label>
                     </div>
-                </article>
+                </div>
 
-                <section class="quiz-summary" aria-labelledby="quizSummaryTitle">
+                <div class="quiz-summary" aria-labelledby="quizSummaryTitle">
                     <div class="quiz-summary__copy">
                         <span class="quiz-summary__eyebrow">Suas escolhas estão prontas</span>
                         <div id="div_result"></div>
@@ -306,12 +305,12 @@
                         <button type="button" onclick="cadastrar()" class="quiz-button quiz-button--primary">Registrar
                             preferências</button>
                     </div>
-                </section>
-            </form>
-        </section>
-    </main>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer class="footer">
+    <div class="footer">
         <div class="container footer__content">
             <div class="footer-brand">
                 <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
@@ -339,7 +338,7 @@
             <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
             <span>MyHxH &copy; 2026</span>
         </div>
-    </footer>
+    </div>
 
     <script>
 

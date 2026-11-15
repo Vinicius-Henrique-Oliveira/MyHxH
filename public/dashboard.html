@@ -19,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <body>
-  <header class="header">
+  <div class="header">
     <div class="container header__content">
       <a class="brand" href="index.html" aria-label="Ir para a página inicial">
         <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
@@ -30,7 +30,7 @@
 
       </a>
 
-      <nav class="nav-center" aria-label="Navegação principal">
+      <div class="nav-center" aria-label="Navegação principal">
         <ul class="navbar navbar--center">
           <li><a href="index.html">Início</a></li>
           <li><a href="#obra">O universo</a></li>
@@ -38,15 +38,15 @@
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="comunidade.html">Comunidade</a></li>
         </ul>
-      </nav>
+      </div>
 
       <div class="nav-actions" id="navActions">
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="dashboard-page" id="topo">
-    <section class="dashboard-hero container" aria-labelledby="dashboardHeroTitle">
+  <div class="dashboard-page" id="topo">
+    <div class="dashboard-hero container" aria-labelledby="dashboardHeroTitle">
       <div class="dashboard-hero__copy">
         <span class="dashboard-hero__eyebrow">Observatório / Dashboard coletiva</span>
         <h1 id="dashboardHeroTitle">O retrato da nossa comunidade.</h1>
@@ -54,37 +54,37 @@
       </div>
 
       <a class="dashboard-hero__cta" href="quiz.html">Responder ao quiz</a>
-    </section>
+    </div>
 
-    <section class="dashboard-stats container" aria-label="Resumo da comunidade">
-      <article class="dashboard-stat-card">
+    <div class="dashboard-stats container" aria-label="Resumo da comunidade">
+      <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Participantes</span>
         <strong class="dashboard-stat-card__value" id="totalParticipantes">--</strong>
         <p class="dashboard-stat-card__text">Pessoas com respostas registradas no banco.</p>
-      </article>
+      </div>
 
-      <article class="dashboard-stat-card">
+      <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Preferências</span>
         <strong class="dashboard-stat-card__value" id="totalPreferencias">--</strong>
         <p class="dashboard-stat-card__text">Uma resposta por pessoa em cada pergunta.</p>
-      </article>
+      </div>
 
-      <article class="dashboard-stat-card">
+      <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Questionários completos</span>
         <strong class="dashboard-stat-card__value" id="totalQuestionarios">--%</strong>
         <p class="dashboard-stat-card__text">Percentual de quem respondeu todas as perguntas.</p>
-      </article>
-    </section>
+      </div>
+    </div>
 
-    <section class="dashboard-grid container" aria-label="Distribuição das respostas">
-      <article class="dashboard-card dashboard-card--wide">
-        <header class="dashboard-card__header">
+    <div class="dashboard-grid container" aria-label="Distribuição das respostas">
+      <div class="dashboard-card dashboard-card--wide">
+        <div class="dashboard-card__header">
           <div>
             <span class="dashboard-card__eyebrow">Pergunta 01</span>
             <h2>Personagem favorito</h2>
           </div>
           <span class="dashboard-card__meta">-- respostas</span>
-        </header>
+        </div>
 
         <p class="dashboard-card__lead">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da
           comunidade.</p>
@@ -92,41 +92,41 @@
         <div class="dashboard-chart-box" id="graficoPersonagem">
           <canvas id="Personagem"></canvas>
         </div>
-      </article>
+      </div>
 
-      <article class="dashboard-card">
-        <header class="dashboard-card__header">
+      <div class="dashboard-card">
+        <div class="dashboard-card__header">
           <div>
             <span class="dashboard-card__eyebrow">Pergunta 02</span>
             <h2>Arco favorito</h2>
           </div>
           <span class="dashboard-card__meta">-- respostas</span>
-        </header>
+        </div>
 
         <p class="dashboard-card__lead">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
 
         <div class="dashboard-chart-box dashboard-chart-box--short" id="graficoArco">
           <canvas id="Arco"></canvas>
         </div>
-      </article>
+      </div>
 
-      <article class="dashboard-card dashboard-card--wide dashboard-card--bottom">
-        <header class="dashboard-card__header">
+      <div class="dashboard-card dashboard-card--wide dashboard-card--bottom">
+        <div class="dashboard-card__header">
           <div>
             <span class="dashboard-card__eyebrow">Pergunta 03</span>
             <h2>Integrante favorito da Trupe Fantasma</h2>
           </div>
           <span class="dashboard-card__meta">-- respostas</span>
-        </header>
+        </div>
 
         <p class="dashboard-card__lead">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
 
         <div class="dashboard-chart-box dashboard-chart-box--ring" id="graficoTrupe">
           <canvas id="Trupe"></canvas>
         </div>
-      </article>
+      </div>
 
-      <aside class="dashboard-notes" aria-label="Notas do observatório">
+      <div class="dashboard-notes" aria-label="Notas do observatório">
         <span class="dashboard-notes__eyebrow">Notas do observatório</span>
         <h2>Leituras rápidas para orientar a dashboard.</h2>
 
@@ -144,11 +144,11 @@
           <strong>Preferência não é competição</strong>
           <p>Não existe resposta certa, só diferentes formas de se conectar com a obra.</p>
         </div>
-      </aside>
-    </section>
-  </main>
+      </div>
+    </div>
+  </div>
 
-  <footer class="footer">
+  <div class="footer">
     <div class="container footer__content">
       <div class="footer-brand">
         <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
@@ -176,7 +176,7 @@
       <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
       <span>MyHxH &copy; 2026</span>
     </div>
-  </footer>
+  </div>
 
   <script>
 

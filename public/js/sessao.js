@@ -17,11 +17,7 @@ function limparSessao() {
     window.location = "../index.html";
 }
 
-// carregamento (loading)
-function aguardar() {
-    var divAguardar = document.getElementById("div_aguardar");
-    divAguardar.style.display = "flex";
-}
+// carregamento (loading) -- REMOVI POIS ESTAVA REDIMENSIONANDO A IMAGEM!!!
 
 function finalizarAguardar(texto) {
     var divAguardar = document.getElementById("div_aguardar");

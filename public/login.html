@@ -18,7 +18,7 @@
 
 <body>
 
-  <header class="header">
+  <div class="header">
     <div class="container header__content">
       <a class="brand" href="index.html" aria-label="Ir para a página inicial">
         <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
@@ -28,7 +28,7 @@
         </div>
       </a>
 
-      <nav class="nav-center" aria-label="Navegação principal">
+      <div class="nav-center" aria-label="Navegação principal">
         <ul class="navbar navbar--center">
           <li><a href="index.html">Início</a></li>
           <li><a href="index.html#obra">O universo</a></li>
@@ -36,18 +36,18 @@
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="comunidade.html">Comunidade</a></li>
         </ul>
-      </nav>
+      </div>
 
       <div class="nav-actions">
         <a class="nav-link" href="login.html">Entrar</a>
         <a class="nav-cta" href="cadastro.html">Criar conta</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="page page--login">
+  <div class="page--login">
     <div class="container login-layout">
-      <section class="card card-login">
+      <div class="card-login">
         <span class="intro-badge">Seu ponto de encontro</span>
         <h1>Bem-vindo de volta, Hunter.</h1>
         <p class="intro-text">
@@ -87,14 +87,13 @@
 
           <div id="div_erros_login"></div>
         </div>
-      </section>
+      </div>
 
-      <aside class="hero-visual" aria-label="Imagem temática">
-      </aside>
+      <div class="hero-visual" aria-label="Imagem temática"></div>
     </div>
-  </main>
+  </div>
 
-  <footer class="footer">
+  <div class="footer">
     <div class="container footer__content">
       <div class="footer-brand">
         <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
@@ -122,7 +121,7 @@
       <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
       <span>MyHxH &copy; 2026</span>
     </div>
-  </footer>
+  </div>
 
 </body>
 
@@ -130,7 +129,6 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
