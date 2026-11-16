@@ -57,6 +57,30 @@ function favorito_trupe() {
     return database.executar(instrucaoSql);
 }
 
+function porcentagem_personagem() {
+    var instrucaoSql = `
+        SELECT * from porcentagem_personagem;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function porcentagem_arco() {
+    var instrucaoSql = `
+        SELECT * from porcentagem_arco;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function porcentagem_trupe() {
+    var instrucaoSql = `
+        SELECT * from porcentagem_trupe;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     total_respostas,
     favorito_personagem,
@@ -64,5 +88,8 @@ module.exports = {
     favorito_trupe,
     all_personagens,
     all_arcos,
-    all_trupe
+    all_trupe,
+    porcentagem_personagem,
+    porcentagem_arco,
+    porcentagem_trupe
 };

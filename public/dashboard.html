@@ -66,19 +66,19 @@
       <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Personagem Favorito</span>
         <strong class="dashboard-stat-card__value" id="favoritoPersonagem">--</strong>
-        <p class="dashboard-stat-card__text" id="porcentagemPreferencia">43% das preferências</p>
+        <p class="dashboard-stat-card__text" id="porcentagemPersonagem">--</p>
       </div>
 
       <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Arco favorito</span>
         <strong class="dashboard-stat-card__value" id="favoritoArco">--%</strong>
-        <p class="dashboard-stat-card__text">43% das preferências</p>
+        <p class="dashboard-stat-card__text" id="porcentagemArco">--</p>
       </div>
-      
+
       <div class="dashboard-stat-card">
         <span class="dashboard-stat-card__label">Favorito da trupe</span>
         <strong class="dashboard-stat-card__value" id="favoritoTrupe">--%</strong>
-        <p class="dashboard-stat-card__text">43% das preferências</p>
+        <p class="dashboard-stat-card__text" id="porcentagemTrupe">--</p>
       </div>
     </div>
 
@@ -186,131 +186,186 @@
 
   <script>
 
-    totalParticipantes.innerHTML
-    totalPreferencias.innerHTML
-    totalQuestionarios.innerHTML
-    porcentagemPreferencia.innerHTML 
 
+    fetch("/dashboard/dashboard")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (dados) {
+        console.log(dados);
+        totalParticipantes.innerHTML = `${dados.total_respostas[0].Participantes}`;
+        favoritoPersonagem.innerHTML = `${dados.favorito_personagem[0].personagem}`;
+        favoritoArco.innerHTML = `${dados.favorito_arco[0].arco}`;
+        favoritoTrupe.innerHTML = `${dados.favorito_trupe[0].personagem}`;
+        porcentagemPersonagem.innerHTML = `${dados.porcentagem_personagem[0].porcentagem}% das preferências`;
+        porcentagemArco.innerHTML = `${dados.porcentagem_arco[0].porcentagem}% das preferências`;
+        porcentagemTrupe.innerHTML = `${dados.porcentagem_trupe[0].porcentagem}% das preferências`;
 
-    const grafico1 = document.getElementById('Personagem');
-    const cores1 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
-    const votos1 = [12, 19, 3, 5, 2, 3];
+        const votosPersonagem1 = dados.all_personagens[0].respostas;
+        const votosPersonagem2 = dados.all_personagens[1].respostas;
+        const votosPersonagem3 = dados.all_personagens[2].respostas;
+        const votosPersonagem4 = dados.all_personagens[3].respostas;
+        const votosPersonagem5 = dados.all_personagens[4].respostas;
+        const votosPersonagem6 = dados.all_personagens[5].respostas;
 
-    let maior1 = votos1[0]
-    let ax_maior1 = 0;
+        const nomePersonagem1 = dados.all_personagens[0].personagem;
+        const nomePersonagem2 = dados.all_personagens[1].personagem;
+        const nomePersonagem3 = dados.all_personagens[2].personagem;
+        const nomePersonagem4 = dados.all_personagens[3].personagem;
+        const nomePersonagem5 = dados.all_personagens[4].personagem;
+        const nomePersonagem6 = dados.all_personagens[5].personagem;
 
-    for (let i = 0; i < votos1.length; i++) {
+        
+        const grafico1 = document.getElementById('Personagem');
+        const cores1 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
+        const votosGrafico1 = [votosPersonagem1, votosPersonagem2, votosPersonagem3, votosPersonagem4, votosPersonagem5, votosPersonagem6];
 
-      if (votos1[i] > maior1) {
-        maior1 = votos1[i]
-        ax_maior1 = i;
-      }
+        let maior1 = votosGrafico1[0]
+        let ax_maior1 = 0;
 
-    }
+        for (let i = 0; i < votosGrafico1.length; i++) {
 
-    cores1[ax_maior1] = '#D97A3C';
-
-    new Chart(grafico1, {
-      type: 'bar',
-      data: {
-        labels: ['Gon Freecss', 'Killua Zoldyck', 'Kurapika', 'Netero', 'Hisoka', 'Meruem'],
-        datasets: [{
-          label: 'Votos',
-          data: votos1,
-          borderWidth: 1,
-          backgroundColor: cores1
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        scales: {
-          y: {
-            beginAtZero: true
+          if (votosGrafico1[i] > maior1) {
+            maior1 = votosGrafico1[i]
+            ax_maior1 = i;
           }
+
         }
-      }
-    });
 
-
-    const grafico2 = document.getElementById('Arco');
-    const cores2 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
-    const votos2 = [12, 19, 3, 5, 2, 3];
-
-    let maior2 = votos2[0]
-    let ax_maior2 = 0;
-
-    for (let i = 0; i < votos2.length; i++) {
-
-      if (votos2[i] > maior2) {
-        maior2 = votos2[i]
-        ax_maior2 = i;
-      }
-
-    }
-
-    cores2[ax_maior2] = '#D97A3C';
-
-
-    new Chart(grafico2, {
-      type: 'bar',
-      data: {
-        labels: ['Exame Hunter', 'Torre Celestial', 'Yorknew City', 'Greed Island', 'Formigas Quimera', 'Eleição'],
-        datasets: [{
-          label: 'Votos',
-          data: votos2,
-          borderWidth: 1,
-          backgroundColor: cores2
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true
+        cores1[ax_maior1] = '#D97A3C';
+        
+        new Chart(grafico1, {
+          type: 'bar',
+          data: {
+            labels: [nomePersonagem1, nomePersonagem2, nomePersonagem3, nomePersonagem4, nomePersonagem5, nomePersonagem6],
+            datasets: [{
+              label: 'Votos',
+              data: votosGrafico1,
+              borderWidth: 1,
+              backgroundColor: cores1
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
           }
-        }
-      }
-    });
+        });
+        
+        const votosArco1 = dados.all_arcos[0].respostas;
+        const votosArco2 = dados.all_arcos[1].respostas;
+        const votosArco3 = dados.all_arcos[2].respostas;
+        const votosArco4 = dados.all_arcos[3].respostas;
+        const votosArco5 = dados.all_arcos[4].respostas;
+        const votosArco6 = dados.all_arcos[5].respostas;
 
-    const grafico3 = document.getElementById('Trupe');
-    const votos3 = [12, 19, 3, 5, 2, 3];
-    const cores3 = ['#7E9E70', '#163E32', '#7E9E70', '#A8B991', '#CFA06B', '#C6D0BD']
-    let maior3 = votos3[0]
-    let ax_maior3 = 0;
+        const nomeArco1 = dados.all_arcos[0].arco;
+        const nomeArco2 = dados.all_arcos[1].arco;
+        const nomeArco3 = dados.all_arcos[2].arco;
+        const nomeArco4 = dados.all_arcos[3].arco;
+        const nomeArco5 = dados.all_arcos[4].arco;
+        const nomeArco6 = dados.all_arcos[5].arco;
+        
+        const grafico2 = document.getElementById('Arco');
+        const cores2 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
+        const votosGrafico2 = [votosArco1, votosArco2, votosArco3, votosArco4, votosArco5, votosArco6];
 
-    for (let i = 0; i < votos3.length; i++) {
+        let maior2 = votosGrafico2[0]
+        let ax_maior2 = 0;
 
-      if (votos3[i] > maior3) {
-        maior3 = votos3[i]
-        ax_maior3 = i;
-      }
+        for (let i = 0; i < votosGrafico2.length; i++) {
 
-    }
-
-    cores3[ax_maior3] = '#D97A3C';
-
-    new Chart(grafico3, {
-      type: 'doughnut',
-      data: {
-        labels: ['Chrollo', 'Feitan', 'Machi', 'Nobunaga', 'Shizuku', 'Phinks'],
-        datasets: [{
-          label: 'Votos,',
-          data: votos3,
-          borderWidth: 1,
-          backgroundColor: cores3
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true
+          if (votosGrafico2[i] > maior2) {
+            maior2 = votosGrafico2[i]
+            ax_maior2 = i;
           }
+
         }
-      }
-    });
+
+        cores2[ax_maior2] = '#D97A3C';
+
+
+        new Chart(grafico2, {
+          type: 'bar',
+          data: {
+            labels: [nomeArco1, nomeArco2, nomeArco3, nomeArco4, nomeArco5, nomeArco6],
+            datasets: [{
+              label: 'Votos',
+              data: votosGrafico2,
+              borderWidth: 1,
+              backgroundColor: cores2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        const votosTrupe1 = dados.all_trupe[0].respostas;
+        const votosTrupe2 = dados.all_trupe[1].respostas;
+        const votosTrupe3 = dados.all_trupe[2].respostas;
+        const votosTrupe4 = dados.all_trupe[3].respostas;
+        const votosTrupe5 = dados.all_trupe[4].respostas;
+        const votosTrupe6 = dados.all_trupe[5].respostas;
+
+        const nomeTrupe1 = dados.all_trupe[0].personagem;
+        const nomeTrupe2 = dados.all_trupe[1].personagem;
+        const nomeTrupe3 = dados.all_trupe[2].personagem;
+        const nomeTrupe4 = dados.all_trupe[3].personagem;
+        const nomeTrupe5 = dados.all_trupe[4].personagem;
+        const nomeTrupe6 = dados.all_trupe[5].personagem;
+
+        const grafico3 = document.getElementById('Trupe');
+        const votosGrafico3 = [votosTrupe1, votosTrupe2, votosTrupe3, votosTrupe4, votosTrupe5, votosTrupe6];
+        const cores3 = ['#7E9E70', '#163E32', '#7E9E70', '#A8B991', '#CFA06B', '#C6D0BD']
+        let maior3 = votosGrafico3[0]
+        let ax_maior3 = 0;
+
+        for (let i = 0; i < votosGrafico3.length; i++) {
+
+          if (votosGrafico3[i] > maior3) {
+            maior3 = votosGrafico3[i]
+            ax_maior3 = i;
+          }
+
+        }
+
+        cores3[ax_maior3] = '#D97A3C';
+
+        new Chart(grafico3, {
+          type: 'doughnut',
+          data: {
+            labels: [nomeTrupe1, nomeTrupe2, nomeTrupe3, nomeTrupe4, nomeTrupe5, nomeTrupe6],
+            datasets: [{
+              label: 'Votos,',
+              data: votosGrafico3,
+              borderWidth: 1,
+              backgroundColor: cores3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      
+      });
+
+
 
     function navbar_usuario() {
 

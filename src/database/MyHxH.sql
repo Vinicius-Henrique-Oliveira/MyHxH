@@ -38,6 +38,14 @@ CREATE TABLE pergunta (
     ativa BOOLEAN NOT NULL DEFAULT TRUE
 );
 
+CREATE TABLE personagem (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+    fk_pergunta INT NOT NULL,
+    FOREIGN KEY (fk_pergunta)
+		REFERENCES pergunta(id)
+);
+
 CREATE TABLE resposta (
     id INT PRIMARY KEY AUTO_INCREMENT,
     resposta VARCHAR(45),
@@ -50,6 +58,14 @@ CREATE TABLE resposta (
         REFERENCES pergunta(id)
 );
 
+INSERT INTO personagem (nome, fk_pergunta) VALUES
+('Gon', 1),
+('Killua', 1),
+('Kurapika', 1),
+('Netero', 1),
+('Hisoka', 1),
+('Meruem', 1);
+
 INSERT INTO pergunta (id, enunciado, ordem_exibicao) VALUES
 (1, 'Qual é o seu personagem favorito?', 1),
 (2, 'Qual é o seu arco favorito?', 2),
@@ -59,22 +75,28 @@ SELECT * FROM usuario;
 SELECT * FROM resposta;
 SELECT * FROM pergunta;
 
-
+-- ------------------------------ --
+-- TOTAL DE RESPOSTAS REGISTRADAS --
 
 CREATE VIEW respostas AS
 SELECT
 	TRUNCATE(COUNT(*) / 3, 0) 'Participantes'
 FROM resposta;
 
-
+-- -------------------------------------------------- --
+-- TODOS PERSONAGENS DO QUIZ E SEUS RESPECTIVOS VOTOS --
 
 CREATE VIEW personagens AS
 SELECT
-	resposta 'personagem', 
-    COUNT(resposta) 'respostas'
-FROM resposta
-WHERE resposta IN ('Gon', 'Killua', 'Kurapika', 'Netero', 'Hisoka', 'Meruem')
-GROUP BY resposta;
+	p.nome 'personagem', 
+    COUNT(r.resposta) 'respostas'
+FROM personagem p
+LEFT JOIN resposta r
+	ON r.resposta = p.nome
+GROUP BY p.nome;
+
+-- -------------------------------------------- --
+-- TODOS ARCOS DO QUIZ E SEUS RESPECTIVOS VOTOS --
 
 CREATE VIEW arcos AS
 SELECT
@@ -84,6 +106,9 @@ FROM resposta
 WHERE resposta IN ('exame-hunter', 'torre-celestial', 'yorknew-city', 'greed-island', 'formigas-quimera', 'eleicao')
 GROUP BY resposta;
 
+-- ----------------------------------------------- --
+-- TODOS MEMBROS DA TRUPE E SEUS RESPECTIVOS VOTOS --
+
 CREATE VIEW trupe AS
 SELECT
 	resposta 'personagem', 
@@ -92,7 +117,7 @@ FROM resposta
 WHERE resposta IN ('Chrollo', 'Feitan', 'Machi', 'Nobunaga', 'Shizuku', 'Phinks')
 GROUP BY resposta;
 
--- --------------------------- --
+-- ------------------------------ --
 -- PERSONAGEM MAIS VOTADO DO QUIZ --
 
 
@@ -103,7 +128,7 @@ FROM personagens
 ORDER BY respostas DESC 
 LIMIT 1;
 
--- --------------------------- --
+-- ------------------------ --
 -- ARCO MAIS VOTADO DO QUIZ --
 
 
@@ -123,5 +148,8 @@ SELECT
 FROM trupe
 ORDER BY respostas DESC 
 LIMIT 1;
+
+DELETE FROM resposta
+WHERE resposta = 'kurapika';
 
 SELECT * FROM trupe_favorito;
