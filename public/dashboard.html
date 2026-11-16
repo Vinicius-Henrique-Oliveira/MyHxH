@@ -58,21 +58,27 @@
 
     <div class="dashboard-stats container" aria-label="Resumo da comunidade">
       <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Participantes</span>
+        <span class="dashboard-stat-card__label">Respostas</span>
         <strong class="dashboard-stat-card__value" id="totalParticipantes">--</strong>
-        <p class="dashboard-stat-card__text">Pessoas com respostas registradas no banco.</p>
+        <p class="dashboard-stat-card__text">Total de pessoas com respostas registradas.</p>
       </div>
 
       <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Preferências</span>
-        <strong class="dashboard-stat-card__value" id="totalPreferencias">--</strong>
-        <p class="dashboard-stat-card__text">Uma resposta por pessoa em cada pergunta.</p>
+        <span class="dashboard-stat-card__label">Personagem Favorito</span>
+        <strong class="dashboard-stat-card__value" id="favoritoPersonagem">--</strong>
+        <p class="dashboard-stat-card__text" id="porcentagemPreferencia">43% das preferências</p>
       </div>
 
       <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Questionários completos</span>
-        <strong class="dashboard-stat-card__value" id="totalQuestionarios">--%</strong>
-        <p class="dashboard-stat-card__text">Percentual de quem respondeu todas as perguntas.</p>
+        <span class="dashboard-stat-card__label">Arco favorito</span>
+        <strong class="dashboard-stat-card__value" id="favoritoArco">--%</strong>
+        <p class="dashboard-stat-card__text">43% das preferências</p>
+      </div>
+      
+      <div class="dashboard-stat-card">
+        <span class="dashboard-stat-card__label">Favorito da trupe</span>
+        <strong class="dashboard-stat-card__value" id="favoritoTrupe">--%</strong>
+        <p class="dashboard-stat-card__text">43% das preferências</p>
       </div>
     </div>
 
@@ -179,6 +185,11 @@
   </div>
 
   <script>
+
+    totalParticipantes.innerHTML
+    totalPreferencias.innerHTML
+    totalQuestionarios.innerHTML
+    porcentagemPreferencia.innerHTML 
 
 
     const grafico1 = document.getElementById('Personagem');

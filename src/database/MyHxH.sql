@@ -59,13 +59,69 @@ SELECT * FROM usuario;
 SELECT * FROM resposta;
 SELECT * FROM pergunta;
 
+
+
+CREATE VIEW respostas AS
+SELECT
+	TRUNCATE(COUNT(*) / 3, 0) 'Participantes'
+FROM resposta;
+
+
+
+CREATE VIEW personagens AS
+SELECT
+	resposta 'personagem', 
+    COUNT(resposta) 'respostas'
+FROM resposta
+WHERE resposta IN ('Gon', 'Killua', 'Kurapika', 'Netero', 'Hisoka', 'Meruem')
+GROUP BY resposta;
+
+CREATE VIEW arcos AS
+SELECT
+	resposta 'arco', 
+    COUNT(resposta) 'respostas'
+FROM resposta
+WHERE resposta IN ('exame-hunter', 'torre-celestial', 'yorknew-city', 'greed-island', 'formigas-quimera', 'eleicao')
+GROUP BY resposta;
+
+CREATE VIEW trupe AS
+SELECT
+	resposta 'personagem', 
+    COUNT(resposta) 'respostas'
+FROM resposta
+WHERE resposta IN ('Chrollo', 'Feitan', 'Machi', 'Nobunaga', 'Shizuku', 'Phinks')
+GROUP BY resposta;
+
+-- --------------------------- --
+-- PERSONAGEM MAIS VOTADO DO QUIZ --
+
+
+CREATE VIEW personagem_favorito AS
 SELECT 
-	u.nome 'Nome',
-    p.enunciado 'Pergunta',
-    r.resposta 'Reposta'
-FROM usuario u
-	JOIN resposta r
-    ON r.fk_usuario = u.id
-    JOIN pergunta p
-    ON p.id = r.fk_pergunta;
-    
+	*
+FROM personagens
+ORDER BY respostas DESC 
+LIMIT 1;
+
+-- --------------------------- --
+-- ARCO MAIS VOTADO DO QUIZ --
+
+
+CREATE VIEW arco_favorito AS
+SELECT 
+	*
+FROM arcos
+ORDER BY respostas DESC 
+LIMIT 1;
+
+-- --------------------------- --
+-- MEMBRO MAIS VOTADO DA TRUPE --
+
+CREATE VIEW trupe_favorito AS
+SELECT 
+	*
+FROM trupe
+ORDER BY respostas DESC 
+LIMIT 1;
+
+SELECT * FROM trupe_favorito;
