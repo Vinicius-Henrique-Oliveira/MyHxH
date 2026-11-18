@@ -377,6 +377,7 @@
 
             if (!idUsuario) {
                 alert("Você precisa estar logado para responder o quiz.")
+                window.location.href='login.html'
                 return;
             }
 
@@ -386,6 +387,8 @@
                 arco: arco.value,
                 trupe: trupe.value
             };
+
+
 
             fetch("/quiz/cadastrar", {
                 method: "POST",
@@ -397,6 +400,7 @@
                 .then (res => {
                     if (res.ok) {
                         alert("Quiz enviado com sucesso!");
+                        window.location.href='dashboard.html'
                     } else {
                         alert("Erro ao enviar quiz");
                     }
