@@ -186,6 +186,15 @@
 
   <script>
 
+    const idUsuario = sessionStorage.ID_USUARIO;
+
+    if (!idUsuario) {
+
+      alert("Você precisa estar logado para acessar a dashboard!");
+      
+      window.location.replace("login.html");
+    }
+
 
     fetch("/dashboard/dashboard")
       .then(function (res) {
@@ -215,7 +224,7 @@
         const nomePersonagem5 = dados.all_personagens[4].personagem;
         const nomePersonagem6 = dados.all_personagens[5].personagem;
 
-        
+
         const grafico1 = document.getElementById('Personagem');
         const cores1 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
         const votosGrafico1 = [votosPersonagem1, votosPersonagem2, votosPersonagem3, votosPersonagem4, votosPersonagem5, votosPersonagem6];
@@ -233,7 +242,7 @@
         }
 
         cores1[ax_maior1] = '#D97A3C';
-        
+
         new Chart(grafico1, {
           type: 'bar',
           data: {
@@ -254,7 +263,7 @@
             }
           }
         });
-        
+
         const votosArco1 = dados.all_arcos[0].respostas;
         const votosArco2 = dados.all_arcos[1].respostas;
         const votosArco3 = dados.all_arcos[2].respostas;
@@ -268,7 +277,7 @@
         const nomeArco4 = dados.all_arcos[3].arco;
         const nomeArco5 = dados.all_arcos[4].arco;
         const nomeArco6 = dados.all_arcos[5].arco;
-        
+
         const grafico2 = document.getElementById('Arco');
         const cores2 = ["#163E32", "#163E32", "#163E32", "#163E32", "#163E32", "#163E32"]
         const votosGrafico2 = [votosArco1, votosArco2, votosArco3, votosArco4, votosArco5, votosArco6];
@@ -362,7 +371,7 @@
             }
           }
         });
-      
+
       });
 
 
