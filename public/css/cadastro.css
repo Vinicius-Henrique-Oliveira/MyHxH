@@ -1,14 +1,14 @@
-.page--cadastro {
+.pagina-cadastro {
   padding: 0;
 }
 
-.cadastro-layout {
+.layout-cadastro {
   display: grid;
   grid-template-columns: minmax(430px, 470px) minmax(0, 1fr);
   min-height: calc(100vh - 300px);
 }
 
-.card-cadastro {
+.cartao-cadastro {
   padding: 56px 40px;
   background: #f7f4ea;
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-.intro-badge {
+.selo-introducao {
   display: block;
   margin-bottom: 16px;
   color: var(--verde-principal);
@@ -26,7 +26,7 @@
   text-transform: uppercase;
 }
 
-.intro-badge::before {
+.selo-introducao::before {
   content: '';
   display: inline-block;
   width: 24px;
@@ -36,7 +36,7 @@
   vertical-align: middle;
 }
 
-.card-cadastro h1 {
+.cartao-cadastro h1 {
   margin: 0;
   max-width: 10ch;
   color: var(--verde-principal);
@@ -44,7 +44,7 @@
   line-height: 1;
 }
 
-.intro-text {
+.texto-introducao {
   margin: 16px 0 0;
   max-width: 40ch;
   color: rgba(22, 62, 50, 0.78);
@@ -52,11 +52,11 @@
   line-height: 1.6;
 }
 
-.alerta_erro {
+.alerta-erro {
   margin-top: 18px;
 }
 
-.card_erro {
+.cartao-erro {
   display: none;
   margin-bottom: 16px;
   padding: 12px 14px;
@@ -66,18 +66,18 @@
   color: var(--verde-principal);
 }
 
-.card_erro #mensagem_erro {
+.cartao-erro #mensagem_erro {
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
-.card-cadastro h2 {
+.cartao-cadastro h2 {
   margin: 18px 0 0;
   font-size: 1.15rem;
 }
 
-.card-subtitle {
+.subtitulo-cartao {
   margin: 6px 0 0;
   color: rgba(22, 62, 50, 0.72);
   font-size: 0.95rem;
@@ -127,7 +127,7 @@
   font-size: 0.84rem;
 }
 
-.valid {
+.validacao-resultado {
   display: flex;
   min-height: 10px;
   font-size: 0.85rem;
@@ -146,25 +146,25 @@
   cursor: pointer;
 }
 
-.form-login-link {
+.link-formulario {
   margin: 0;
   text-align: center;
   color: rgba(22, 62, 50, 0.72);
   font-size: 0.95rem;
 }
 
-.form-login-link a {
+.link-formulario a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.loading-div {
+.area-carregamento {
   width: 54px;
   display: none;
   margin-top: 16px;
 }
 
-.loading-div img {
+.area-carregamento img {
   width: 54px;
   height: 54px;
 }
@@ -173,7 +173,7 @@
   display: none;
 }
 
-.hero-visual {
+.visual-hero {
   position: relative;
   display: flex;
   min-height: 100%;

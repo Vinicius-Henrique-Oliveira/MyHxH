@@ -43,17 +43,17 @@ textarea {
   font: inherit;
 }
 
-.container {
+.conteiner {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
 }
 
-.header {
+.cabecalho {
   background: rgba(244, 241, 231, 0.96);
   border-bottom: 1px solid var(--borda-suave);
 }
 
-.header__content {
+.cabecalho__conteudo {
   min-height: 92px;
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@ textarea {
   gap: 24px;
 }
 
-.brand {
+.marca {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -69,24 +69,24 @@ textarea {
   font-weight: 700;
 }
 
-.brand img {
+.marca img {
   width: 44px;
   height: 44px;
   object-fit: contain;
 }
 
-.brand-copy {
+.marca__texto {
   display: flex;
   flex-direction: column;
   gap: 2px;
   line-height: 1;
 }
 
-.brand-copy strong {
+.marca__texto strong {
   font-size: 1.05rem;
 }
 
-.brand-copy span {
+.marca__texto span {
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -94,39 +94,39 @@ textarea {
   opacity: 0.72;
 }
 
-.nav-center {
+.navegacao-central {
   display: flex;
   justify-content: center;
 }
 
-.navbar {
+.menu-navegacao {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar--center {
+.menu-navegacao--central {
   align-items: center;
   justify-content: center;
   gap: 28px;
   flex-wrap: wrap;
 }
 
-.navbar--center a {
+.menu-navegacao--central a {
   color: var(--verde-principal);
   font-weight: 600;
   font-size: 0.98rem;
 }
 
-.nav-actions {
+.acoes-cabecalho {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.nav-link,
-.nav-cta {
+.link-cabecalho,
+.botao-cabecalho {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -136,16 +136,16 @@ textarea {
   font-weight: 700;
 }
 
-.nav-link {
+.link-cabecalho {
   color: var(--verde-principal);
 }
 
-.nav-cta {
+.botao-cabecalho {
   background: var(--laranja-principal);
   color: #fff;
 }
 
-.nav-actions button {
+.acoes-cabecalho button {
   min-height: 42px;
   padding: 0 18px;
   border: 0;
@@ -157,13 +157,13 @@ textarea {
   cursor: pointer;
 }
 
-.footer {
+.rodape {
   background: #112d25;
   color: rgba(244, 241, 231, 0.82);
   padding: 36px 0 20px;
 }
 
-.footer__content {
+.rodape__conteudo {
   display: grid;
   grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1fr) minmax(240px, 0.7fr);
   gap: 28px;
@@ -172,17 +172,17 @@ textarea {
   border-bottom: 1px solid rgba(244, 241, 231, 0.12);
 }
 
-.brand--footer {
+.marca--rodape {
   color: #f7f2e8;
 }
 
-.footer-brand p {
+.rodape-marca p {
   margin: 12px 0 0;
   max-width: 18ch;
   line-height: 1.6;
 }
 
-.footer-nav {
+.rodape-nav {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -192,18 +192,18 @@ textarea {
   gap: 24px;
 }
 
-.footer-nav a {
+.rodape-nav a {
   font-size: 0.92rem;
 }
 
-.footer-note {
+.rodape-nota {
   justify-self: end;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.footer__bottom {
+.rodape__inferior {
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -213,12 +213,12 @@ textarea {
   color: rgba(244, 241, 231, 0.52);
 }
 
-.footer__bottom h4 {
+.rodape__inferior h4 {
   margin: 0;
   font: inherit;
   max-width: 60ch;
 }
 
-.footer__bottom span {
+.rodape__inferior span {
   white-space: nowrap;
 }

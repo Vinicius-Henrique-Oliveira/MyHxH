@@ -17,18 +17,18 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container header__content">
-            <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+    <div class="cabecalho">
+        <div class="conteiner cabecalho__conteudo">
+            <a class="marca" href="index.html" aria-label="Ir para a página inicial">
                 <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
-                <div class="brand-copy">
+                <div class="marca__texto">
                     <strong>MyHxH</strong>
                     <span>De fã para explorador</span>
                 </div>
             </a>
 
-            <div class="nav-center" aria-label="Navegação principal">
-                <ul class="navbar navbar--center">
+            <div class="navegacao-central" aria-label="Navegação principal">
+                <ul class="menu-navegacao menu-navegacao--central">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="index.html#obra">O universo</a></li>
                     <li><a href="quiz.html">Quiz de preferências</a></li>
@@ -37,23 +37,23 @@
                 </ul>
             </div>
 
-            <div class="nav-actions" id="navActions"></div>
+            <div class="acoes-cabecalho" id="navActions"></div>
         </div>
     </div>
 
-    <div class="quiz-page" id="topo">
-        <div class="quiz-hero" aria-labelledby="quizHeroTitle">
-            <div class="container quiz-hero__content">
-                <div class="quiz-hero__intro">
-                    <span class="quiz-hero__eyebrow">Expedição pessoal / Quiz de preferências</span>
+    <div class="pagina-quiz" id="topo">
+        <div class="hero-quiz" aria-labelledby="quizHeroTitle">
+            <div class="conteiner hero-quiz__conteudo">
+                <div class="hero-quiz__intro">
+                    <span class="hero-quiz__rotulo">Expedição pessoal / Quiz de preferências</span>
                     <h1 id="quizHeroTitle">Seu universo. Suas escolhas.</h1>
                     <p>Aqui não existe certo ou errado. Só os personagens e as histórias que ficaram com você.</p>
                 </div>
 
-                <div class="quiz-hero__status" aria-label="Progresso do quiz">
+                <div class="hero-quiz__status" aria-label="Progresso do quiz">
                     <strong>03 / 03</strong>
                     <span>Escolhas</span>
-                    <div class="quiz-hero__progress" aria-hidden="true">
+                    <div class="hero-quiz__progresso" aria-hidden="true">
                         <i></i><i></i><i></i>
                     </div>
                     <small>Tudo pronto para revisar</small>
@@ -61,166 +61,166 @@
             </div>
         </div>
 
-        <div class="quiz-intro container" aria-label="Instruções do quiz">
+        <div class="introducao-quiz conteiner" aria-label="Instruções do quiz">
             <p>
                 <span aria-hidden="true">i</span>
                 Escolha uma opção por pergunta. Você pode mudar suas escolhas antes de enviar.
             </p>
         </div>
 
-        <div class="quiz-form container">
-            <div class="quiz-form__content">
-                <div class="quiz-question">
-                    <div class="quiz-question__header">
-                        <div class="quiz-question__index" aria-hidden="true">01</div>
-                        <div class="quiz-question__copy">
+        <div class="formulario-quiz conteiner">
+            <div class="formulario-quiz__conteudo">
+                <div class="pergunta-quiz">
+                    <div class="pergunta-quiz__cabecalho">
+                        <div class="pergunta-quiz__indice" aria-hidden="true">01</div>
+                        <div class="pergunta-quiz__texto">
                             <h2>Quem é seu personagem favorito?</h2>
                             <p>Aquele que faz cada episódio valer a pena.</p>
                         </div>
-                        <div class="quiz-question__meta">
+                        <div class="pergunta-quiz__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
                     </div>
 
-                    <div class="quiz-options quiz-options--cards" role="radiogroup"
+                    <div class="opcoes-quiz opcoes-quiz--cartoes" role="radiogroup"
                         aria-label="Escolha do personagem favorito">
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="Gon" />
-                            <span class="quiz-option-card__image quiz-option-card__image--gon"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--gon"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Gon Freecss</strong>
                                 <span>Um coração aventureiro</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="Killua"
                                 checked />
-                            <span class="quiz-option-card__image quiz-option-card__image--killua"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--killua"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Killua Zoldyck</strong>
                                 <span>Godspeed</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Kurapika" />
-                            <span class="quiz-option-card__image quiz-option-card__image--kurapika"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--kurapika"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Kurapika</strong>
                                 <span>Olhos escarlates</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Netero" />
-                            <span class="quiz-option-card__image quiz-option-card__image--netero"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--netero"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Netero</strong>
                                 <span>A voz da humanidade</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Hisoka" />
-                            <span class="quiz-option-card__image quiz-option-card__image--hisoka"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--hisoka"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Hisoka</strong>
                                 <span>O mágico da morte</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
 
-                        <label class="quiz-option-card quiz-option-card--image">
+                        <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Meruem" />
-                            <span class="quiz-option-card__image quiz-option-card__image--meruem"
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--meruem"
                                 aria-hidden="true"></span>
-                            <span class="quiz-option-card__body">
+                            <span class="cartao-opcao__corpo">
                                 <strong>Meruem</strong>
                                 <span>Rei Quimera</span>
                             </span>
-                            <span class="quiz-option-card__radio" aria-hidden="true"></span>
+                            <span class="cartao-opcao__radio" aria-hidden="true"></span>
                         </label>
                     </div>
                 </div>
 
-                <div class="quiz-question">
-                    <div class="quiz-question__header">
-                        <div class="quiz-question__index" aria-hidden="true">02</div>
-                        <div class="quiz-question__copy">
+                <div class="pergunta-quiz">
+                    <div class="pergunta-quiz__cabecalho">
+                        <div class="pergunta-quiz__indice" aria-hidden="true">02</div>
+                        <div class="pergunta-quiz__texto">
                             <h2>Qual arco mais marcou sua jornada?</h2>
                             <p>Escolha a história que você viveria de novo.</p>
                         </div>
-                        <div class="quiz-question__meta">
+                        <div class="pergunta-quiz__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
                     </div>
 
-                    <div class="quiz-options quiz-options--grid" role="radiogroup"
+                    <div class="opcoes-quiz opcoes-quiz--grade" role="radiogroup"
                         aria-label="Escolha do arco favorito">
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito"
                                 value="exame-hunter" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Exame Hunter</strong>
                                 <span>O começo de tudo</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito"
                                 value="torre-celestial" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Torre Celestial</strong>
                                 <span>A descoberta do Nen</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="yorknew-city"
                                 checked />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Yorknew City</strong>
                                 <span>Correntes e promessas</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito"
                                 value="greed-island" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Greed Island</strong>
                                 <span>Um jogo de verdade</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito"
                                 value="formigas-quimera" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Formigas Quimera</strong>
                                 <span>Poder e humanidade</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito" value="eleicao" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Eleição</strong>
                                 <span>Novos caminhos</span>
                             </span>
@@ -228,64 +228,64 @@
                     </div>
                 </div>
 
-                <div class="quiz-question">
-                    <div class="quiz-question__header">
-                        <div class="quiz-question__index" aria-hidden="true">03</div>
-                        <div class="quiz-question__copy">
+                <div class="pergunta-quiz">
+                    <div class="pergunta-quiz__cabecalho">
+                        <div class="pergunta-quiz__indice" aria-hidden="true">03</div>
+                        <div class="pergunta-quiz__texto">
                             <h2>E na Trupe Fantasma, quem é seu favorito?</h2>
                             <p>Entre os integrantes abaixo, quem mais chama sua atenção?</p>
                         </div>
-                        <div class="quiz-question__meta">
+                        <div class="pergunta-quiz__meta">
                             <span aria-hidden="true">◔</span>
                             <small>1 selecionado</small>
                         </div>
                     </div>
 
-                    <div class="quiz-options quiz-options--grid" role="radiogroup"
+                    <div class="opcoes-quiz opcoes-quiz--grade" role="radiogroup"
                         aria-label="Escolha do membro da Trupe Fantasma">
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Chrollo" checked />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Chrollo Lucilfer</strong>
                                 <span>O estrategista</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Feitan" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Feitan</strong>
                                 <span>A presença silenciosa</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Machi" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Machi</strong>
                                 <span>Fios que conectam</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Nobunaga" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Nobunaga</strong>
                                 <span>O espadachim</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Shizuku" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Shizuku</strong>
                                 <span>O inesperado</span>
                             </span>
                         </label>
 
-                        <label class="quiz-option-pill">
+                        <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Phinks" />
-                            <span class="quiz-option-pill__body">
+                            <span class="pilula-opcao__corpo">
                                 <strong>Phinks</strong>
                                 <span>Força em movimento</span>
                             </span>
@@ -293,16 +293,16 @@
                     </div>
                 </div>
 
-                <div class="quiz-summary" aria-labelledby="quizSummaryTitle">
-                    <div class="quiz-summary__copy">
-                        <span class="quiz-summary__eyebrow">Suas escolhas estão prontas</span>
+                <div class="resumo-quiz" aria-labelledby="quizSummaryTitle">
+                    <div class="resumo-quiz__texto">
+                        <span class="resumo-quiz__rotulo">Suas escolhas estão prontas</span>
                         <div id="div_result"></div>
                     </div>
 
-                    <div class="quiz-summary__actions">
-                        <button type="button" class="quiz-button quiz-button--secondary"
+                    <div class="resumo-quiz__acoes">
+                        <button type="button" class="botao-quiz botao-quiz--secundario"
                             onclick="window.location.href='comunidade.html'">Ver a comunidade</button>
-                        <button type="button" onclick="cadastrar()" class="quiz-button quiz-button--primary">Registrar
+                        <button type="button" onclick="cadastrar()" class="botao-quiz botao-quiz--principal">Registrar
                             preferências</button>
                     </div>
                 </div>
@@ -310,12 +310,12 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container footer__content">
-            <div class="footer-brand">
-                <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+    <div class="rodape">
+        <div class="conteiner rodape__conteudo">
+            <div class="rodape-marca">
+                <a class="marca marca--rodape" href="index.html" aria-label="Ir para a página inicial">
                     <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
-                    <div class="brand-copy">
+                    <div class="marca__texto">
                         <strong>MyHxH</strong>
                         <span>De fã para explorador</span>
                     </div>
@@ -323,18 +323,18 @@
                 <p>Para quem sabe que a melhor parte é o caminho.</p>
             </div>
 
-            <ul class="footer-nav">
+            <ul class="rodape-nav">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="index.html#obra">O universo</a></li>
                 <li><a href="quiz.html">Quiz de preferências</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
             </ul>
 
-            <div class="footer-note">
+            <div class="rodape-nota">
                 <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
             </div>
         </div>
-        <div class="container footer__bottom">
+        <div class="conteiner rodape__inferior">
             <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
             <span>MyHxH &copy; 2026</span>
         </div>
@@ -351,8 +351,8 @@
                 navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
                             <button onclick="limparSessao()">Sair</button>`;
             } else {
-                navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
-                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+                navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
+                                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
             }
         }
 

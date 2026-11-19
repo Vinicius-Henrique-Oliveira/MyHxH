@@ -18,18 +18,18 @@
 
 <body>
 
-  <div class="header">
-    <div class="container header__content">
-      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+  <div class="cabecalho">
+    <div class="conteiner cabecalho__conteudo">
+      <a class="marca" href="index.html" aria-label="Ir para a página inicial">
         <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
-        <div class="brand-copy">
+        <div class="marca__texto">
           <strong>MyHxH</strong>
           <span>De fã para explorador</span>
         </div>
       </a>
 
-      <div class="nav-center" aria-label="Navegação principal">
-        <ul class="navbar navbar--center">
+      <div class="navegacao-central" aria-label="Navegação principal">
+        <ul class="menu-navegacao menu-navegacao--central">
           <li><a href="index.html">Início</a></li>
           <li><a href="index.html#obra">O universo</a></li>
           <li><a href="quiz.html">Quiz de preferências</a></li>
@@ -38,24 +38,24 @@
         </ul>
       </div>
 
-      <div class="nav-actions">
-        <a class="nav-link" href="login.html">Entrar</a>
-        <a class="nav-cta" href="cadastro.html">Criar conta</a>
+      <div class="acoes-cabecalho">
+        <a class="link-cabecalho" href="login.html">Entrar</a>
+        <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>
       </div>
     </div>
   </div>
 
-  <div class="page--login">
-    <div class="container login-layout">
-      <div class="card-login">
-        <span class="intro-badge">Seu ponto de encontro</span>
+  <div class="pagina-login">
+    <div class="conteiner layout-login">
+      <div class="cartao-login">
+        <span class="selo-introducao">Seu ponto de encontro</span>
         <h1>Bem-vindo de volta, Hunter.</h1>
-        <p class="intro-text">
+        <p class="texto-introducao">
           Sua próxima descoberta está logo ali. Entre para continuar explorando com a comunidade.
         </p>
 
-        <div class="alerta_erro">
-          <div class="card_erro" id="cardErro">
+        <div class="alerta-erro">
+          <div class="cartao-erro" id="cardErro">
             <span id="mensagem_erro"></span>
           </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="formulario">
           <div class="campo">
             <span>E-mail</span>
-            <div class="campo-input">
+            <div class="campo-entrada">
               <input id="email_input" type="text" placeholder="voce@exemplo.com" autocomplete="email" />
               <span class="campo-icone" aria-hidden="true">@</span>
             </div>
@@ -71,7 +71,7 @@
 
           <div class="campo">
             <span>Senha</span>
-            <div class="campo-input">
+            <div class="campo-entrada">
               <input id="senha_input" type="password" placeholder="Digite sua senha" autocomplete="current-password" />
               <span class="campo-icone" aria-hidden="true">◌</span>
             </div>
@@ -79,9 +79,9 @@
 
           <button class="botao" onclick="entrar()">Entrar na minha conta</button>
 
-          <p class="form-login-link">Ainda não tem uma conta? <a href="cadastro.html">Criar minha conta</a></p>
+          <p class="link-formulario">Ainda não tem uma conta? <a href="cadastro.html">Criar minha conta</a></p>
 
-          <div id="div_aguardar" class="loading-div">
+          <div id="div_aguardar" class="area-carregamento">
             <img src="./assets/circle-loading.gif" id="loading-gif" alt="Carregando" />
           </div>
 
@@ -89,16 +89,16 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Imagem temática"></div>
+      <div class="visual-hero" aria-label="Imagem temática"></div>
     </div>
   </div>
 
-  <div class="footer">
-    <div class="container footer__content">
-      <div class="footer-brand">
-        <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+  <div class="rodape">
+    <div class="conteiner rodape__conteudo">
+      <div class="rodape-marca">
+        <a class="marca marca--rodape" href="index.html" aria-label="Ir para a página inicial">
           <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
-          <div class="brand-copy">
+          <div class="marca__texto">
             <strong>MyHxH</strong>
             <span>De fã para explorador</span>
           </div>
@@ -106,18 +106,18 @@
         <p>Para quem sabe que a melhor parte é o caminho.</p>
       </div>
 
-      <ul class="footer-nav">
+      <ul class="rodape-nav">
         <li><a href="index.html">Início</a></li>
         <li><a href="index.html#obra">O universo</a></li>
         <li><a href="quiz.html">Quiz de preferências</a></li>
         <li><a href="comunidade.html">Comunidade</a></li>
       </ul>
 
-      <div class="footer-note">
+      <div class="rodape-nota">
         <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
       </div>
     </div>
-    <div class="container footer__bottom">
+    <div class="conteiner rodape__inferior">
       <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
       <span>MyHxH &copy; 2026</span>
     </div>

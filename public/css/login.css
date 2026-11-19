@@ -1,14 +1,14 @@
-.page--login {
+.pagina-login {
   padding: 0;
 }
 
-.login-layout {
+.layout-login {
   display: grid;
   grid-template-columns: minmax(430px, 470px) minmax(0, 1fr);
   min-height: calc(100vh - 300px);
 }
 
-.card-login {
+.cartao-login {
   padding: 56px 40px;
   background: #f7f4ea;
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-.intro-badge {
+.selo-introducao {
   display: block;
   margin-bottom: 16px;
   color: var(--verde-principal);
@@ -26,7 +26,7 @@
   text-transform: uppercase;
 }
 
-.intro-badge::before {
+.selo-introducao::before {
   content: '';
   display: inline-block;
   width: 24px;
@@ -36,7 +36,7 @@
   vertical-align: middle;
 }
 
-.card-login h1 {
+.cartao-login h1 {
   margin: 0;
   max-width: 11ch;
   color: var(--verde-principal);
@@ -44,7 +44,7 @@
   line-height: 1;
 }
 
-.intro-text {
+.texto-introducao {
   margin: 16px 0 0;
   max-width: 38ch;
   color: rgba(22, 62, 50, 0.78);
@@ -52,11 +52,11 @@
   line-height: 1.6;
 }
 
-.alerta_erro {
+.alerta-erro {
   margin-top: 18px;
 }
 
-.card_erro {
+.cartao-erro {
   display: none;
   padding: 12px 14px;
   border: 1px solid rgba(216, 112, 57, 0.32);
@@ -65,7 +65,7 @@
   color: var(--verde-principal);
 }
 
-.card_erro #mensagem_erro {
+.cartao-erro #mensagem_erro {
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
@@ -89,11 +89,11 @@
   font-weight: 700;
 }
 
-.campo-input {
+.campo-entrada {
   position: relative;
 }
 
-.campo-input input {
+.campo-entrada input {
   width: 100%;
   padding: 13px 44px 13px 14px;
   border: 1px solid rgba(22, 62, 50, 0.2);
@@ -103,11 +103,11 @@
   outline: none;
 }
 
-.campo-input input::placeholder {
+.campo-entrada input::placeholder {
   color: rgba(22, 62, 50, 0.42);
 }
 
-.campo-input input:focus {
+.campo-entrada input:focus {
   border-color: var(--laranja-principal);
   box-shadow: 0 0 0 3px rgba(216, 112, 57, 0.14);
 }
@@ -134,25 +134,25 @@
   cursor: pointer;
 }
 
-.form-login-link {
+.link-formulario {
   margin: 0;
   text-align: center;
   color: rgba(22, 62, 50, 0.72);
   font-size: 0.95rem;
 }
 
-.form-login-link a {
+.link-formulario a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.loading-div {
+.area-carregamento {
   width: 54px;
   display: none;
   margin: 10px auto 0;
 }
 
-.loading-div img {
+.area-carregamento img {
   width: 54px;
   height: 54px;
 }
@@ -161,7 +161,7 @@
   display: none;
 }
 
-.hero-visual {
+.visual-hero {
   position: relative;
   display: flex;
   min-height: 100%;

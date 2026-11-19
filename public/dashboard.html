@@ -19,19 +19,19 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <body>
-  <div class="header">
-    <div class="container header__content">
-      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+  <div class="cabecalho">
+    <div class="conteiner cabecalho__conteudo">
+      <a class="marca" href="index.html" aria-label="Ir para a página inicial">
         <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
-        <div class="brand-copy">
+        <div class="marca__texto">
           <strong>MyHxH</strong>
           <span>De fã para explorador</span>
         </div>
 
       </a>
 
-      <div class="nav-center" aria-label="Navegação principal">
-        <ul class="navbar navbar--center">
+      <div class="navegacao-central" aria-label="Navegação principal">
+        <ul class="menu-navegacao menu-navegacao--central">
           <li><a href="index.html">Início</a></li>
           <li><a href="#obra">O universo</a></li>
           <li><a href="quiz.html">Quiz de preferências</a></li>
@@ -40,113 +40,113 @@
         </ul>
       </div>
 
-      <div class="nav-actions" id="navActions">
+      <div class="acoes-cabecalho" id="navActions">
       </div>
     </div>
   </div>
 
-  <div class="dashboard-page" id="topo">
-    <div class="dashboard-hero container" aria-labelledby="dashboardHeroTitle">
-      <div class="dashboard-hero__copy">
-        <span class="dashboard-hero__eyebrow">Observatório / Dashboard coletiva</span>
+  <div class="pagina-dashboard" id="topo">
+    <div class="hero-dashboard conteiner" aria-labelledby="dashboardHeroTitle">
+      <div class="hero-dashboard__texto">
+        <span class="hero-dashboard__rotulo">Observatório / Dashboard coletiva</span>
         <h1 id="dashboardHeroTitle">O retrato da nossa comunidade.</h1>
         <p>Personagens, histórias e conexões. Veja como se distribuem as preferências dos fãs.</p>
       </div>
 
-      <a class="dashboard-hero__cta" href="quiz.html">Responder ao quiz</a>
+      <a class="botao-hero-dashboard" href="quiz.html">Responder ao quiz</a>
     </div>
 
-    <div class="dashboard-stats container" aria-label="Resumo da comunidade">
-      <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Respostas</span>
-        <strong class="dashboard-stat-card__value" id="totalParticipantes">--</strong>
-        <p class="dashboard-stat-card__text">Total de pessoas com respostas registradas.</p>
+    <div class="estatisticas-dashboard conteiner" aria-label="Resumo da comunidade">
+      <div class="cartao-estatistica">
+        <span class="cartao-estatistica__rotulo">Respostas</span>
+        <strong class="cartao-estatistica__valor" id="totalParticipantes">--</strong>
+        <p class="cartao-estatistica__texto">Total de pessoas com respostas registradas.</p>
       </div>
 
-      <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Personagem Favorito</span>
-        <strong class="dashboard-stat-card__value" id="favoritoPersonagem">--</strong>
-        <p class="dashboard-stat-card__text" id="porcentagemPersonagem">--</p>
+      <div class="cartao-estatistica">
+        <span class="cartao-estatistica__rotulo">Personagem Favorito</span>
+        <strong class="cartao-estatistica__valor" id="favoritoPersonagem">--</strong>
+        <p class="cartao-estatistica__texto" id="porcentagemPersonagem">--</p>
       </div>
 
-      <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Arco favorito</span>
-        <strong class="dashboard-stat-card__value" id="favoritoArco">--%</strong>
-        <p class="dashboard-stat-card__text" id="porcentagemArco">--</p>
+      <div class="cartao-estatistica">
+        <span class="cartao-estatistica__rotulo">Arco favorito</span>
+        <strong class="cartao-estatistica__valor" id="favoritoArco">--%</strong>
+        <p class="cartao-estatistica__texto" id="porcentagemArco">--</p>
       </div>
 
-      <div class="dashboard-stat-card">
-        <span class="dashboard-stat-card__label">Favorito da trupe</span>
-        <strong class="dashboard-stat-card__value" id="favoritoTrupe">--%</strong>
-        <p class="dashboard-stat-card__text" id="porcentagemTrupe">--</p>
+      <div class="cartao-estatistica">
+        <span class="cartao-estatistica__rotulo">Favorito da trupe</span>
+        <strong class="cartao-estatistica__valor" id="favoritoTrupe">--%</strong>
+        <p class="cartao-estatistica__texto" id="porcentagemTrupe">--</p>
       </div>
     </div>
 
-    <div class="dashboard-grid container" aria-label="Distribuição das respostas">
-      <div class="dashboard-card dashboard-card--wide">
-        <div class="dashboard-card__header">
+    <div class="grade-dashboard conteiner" aria-label="Distribuição das respostas">
+      <div class="cartao-dashboard cartao-dashboard--amplo">
+        <div class="cartao-dashboard__cabecalho">
           <div>
-            <span class="dashboard-card__eyebrow">Pergunta 01</span>
+            <span class="cartao-dashboard__rotulo">Pergunta 01</span>
             <h2>Personagem favorito</h2>
           </div>
-          <span class="dashboard-card__meta">-- respostas</span>
+          <span class="cartao-dashboard__meta">-- respostas</span>
         </div>
 
-        <p class="dashboard-card__lead">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da
+        <p class="cartao-dashboard__texto">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da
           comunidade.</p>
 
-        <div class="dashboard-chart-box" id="graficoPersonagem">
+        <div class="quadro-grafico" id="graficoPersonagem">
           <canvas id="Personagem"></canvas>
         </div>
       </div>
 
-      <div class="dashboard-card">
-        <div class="dashboard-card__header">
+      <div class="cartao-dashboard">
+        <div class="cartao-dashboard__cabecalho">
           <div>
-            <span class="dashboard-card__eyebrow">Pergunta 02</span>
+            <span class="cartao-dashboard__rotulo">Pergunta 02</span>
             <h2>Arco favorito</h2>
           </div>
-          <span class="dashboard-card__meta">-- respostas</span>
+          <span class="cartao-dashboard__meta">-- respostas</span>
         </div>
 
-        <p class="dashboard-card__lead">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
+        <p class="cartao-dashboard__texto">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
 
-        <div class="dashboard-chart-box dashboard-chart-box--short" id="graficoArco">
+        <div class="quadro-grafico quadro-grafico--curto" id="graficoArco">
           <canvas id="Arco"></canvas>
         </div>
       </div>
 
-      <div class="dashboard-card dashboard-card--wide dashboard-card--bottom">
-        <div class="dashboard-card__header">
+      <div class="cartao-dashboard cartao-dashboard--amplo cartao-dashboard--inferior">
+        <div class="cartao-dashboard__cabecalho">
           <div>
-            <span class="dashboard-card__eyebrow">Pergunta 03</span>
+            <span class="cartao-dashboard__rotulo">Pergunta 03</span>
             <h2>Integrante favorito da Trupe Fantasma</h2>
           </div>
-          <span class="dashboard-card__meta">-- respostas</span>
+          <span class="cartao-dashboard__meta">-- respostas</span>
         </div>
 
-        <p class="dashboard-card__lead">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
+        <p class="cartao-dashboard__texto">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
 
-        <div class="dashboard-chart-box dashboard-chart-box--ring" id="graficoTrupe">
+        <div class="quadro-grafico quadro-grafico--anel" id="graficoTrupe">
           <canvas id="Trupe"></canvas>
         </div>
       </div>
 
-      <div class="dashboard-notes" aria-label="Notas do observatório">
-        <span class="dashboard-notes__eyebrow">Notas do observatório</span>
+      <div class="notas-dashboard" aria-label="Notas do observatório">
+        <span class="notas-dashboard__rotulo">Notas do observatório</span>
         <h2>Leituras rápidas para orientar a dashboard.</h2>
 
-        <div class="dashboard-notes__item">
+        <div class="nota-dashboard">
           <strong>Uma pessoa, três escolhas</strong>
           <p>Cada participante escolhe um personagem, um arco e um integrante da Trupe.</p>
         </div>
 
-        <div class="dashboard-notes__item">
+        <div class="nota-dashboard">
           <strong>Mesma base em cada gráfico</strong>
           <p>As porcentagens devem partir das respostas reais armazenadas no MySQL.</p>
         </div>
 
-        <div class="dashboard-notes__item">
+        <div class="nota-dashboard">
           <strong>Preferência não é competição</strong>
           <p>Não existe resposta certa, só diferentes formas de se conectar com a obra.</p>
         </div>
@@ -154,12 +154,12 @@
     </div>
   </div>
 
-  <div class="footer">
-    <div class="container footer__content">
-      <div class="footer-brand">
-        <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+  <div class="rodape">
+    <div class="conteiner rodape__conteudo">
+      <div class="rodape-marca">
+        <a class="marca marca--rodape" href="index.html" aria-label="Ir para a página inicial">
           <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
-          <div class="brand-copy">
+          <div class="marca__texto">
             <strong>MyHxH</strong>
             <span>De fã para explorador</span>
           </div>
@@ -167,18 +167,18 @@
         <p>Para quem sabe que a melhor parte é o caminho.</p>
       </div>
 
-      <ul class="footer-nav">
+      <ul class="rodape-nav">
         <li><a href="index.html">Início</a></li>
         <li><a href="#obra">O universo</a></li>
         <li><a href="quiz.html">Quiz de preferências</a></li>
         <li><a href="comunidade.html">Comunidade</a></li>
       </ul>
 
-      <div class="footer-note">
+      <div class="rodape-nota">
         <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
       </div>
     </div>
-    <div class="container footer__bottom">
+    <div class="conteiner rodape__inferior">
       <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
       <span>MyHxH &copy; 2026</span>
     </div>
@@ -389,8 +389,8 @@
 
       } else {
 
-        navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
-                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+        navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
+                                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
 
       }
 

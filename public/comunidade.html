@@ -18,19 +18,19 @@
 
 <body>
 
-    <div class="header">
-        <div class="container header__content">
-            <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+    <div class="cabecalho">
+        <div class="conteiner cabecalho__conteudo">
+            <a class="marca" href="index.html" aria-label="Ir para a página inicial">
                 <img src="./assets/imgs/logoNavbar.png" alt="MyHxH" />
-                <div class="brand-copy">
+                <div class="marca__texto">
                     <strong>MyHxH</strong>
                     <span>De fã para explorador</span>
                 </div>
 
             </a>
 
-            <div class="nav-center" aria-label="Navegação principal">
-                <ul class="navbar navbar--center">
+            <div class="navegacao-central" aria-label="Navegação principal">
+                <ul class="menu-navegacao menu-navegacao--central">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="index.html#obra">O universo</a></li>
                     <li><a href="quiz.html">Quiz de preferências</a></li>
@@ -39,14 +39,14 @@
                 </ul>
             </div>
 
-            <div class="nav-actions" id="navActions">
+            <div class="acoes-cabecalho" id="navActions">
             </div>
         </div>
     </div>
 
-    <div class="page-community">
-        <div class="community-hero container" aria-labelledby="communityTitle">
-            <span class="community-hero__eyebrow">Ponto de encontro / Comunidade</span>
+    <div class="pagina-comunidade">
+        <div class="hero-comunidade conteiner" aria-labelledby="communityTitle">
+            <span class="hero-comunidade__rotulo">Ponto de encontro / Comunidade</span>
             <h1 id="communityTitle">Toda jornada rende uma boa conversa.</h1>
             <p>
                 Teorias, descobertas e histórias de quem também vive esse universo.
@@ -54,30 +54,30 @@
             </p>
         </div>
 
-        <div class="community-layout container" aria-label="Área da comunidade">
-            <div class="community-main">
-                <div class="compose-card" aria-labelledby="composeTitle">
-                    <span class="section-kicker">Compartilhe sua descoberta</span>
+        <div class="layout-comunidade conteiner" aria-label="Área da comunidade">
+            <div class="comunidade-principal">
+                <div class="cartao-composicao" aria-labelledby="composeTitle">
+                    <span class="rotulo-secao">Compartilhe sua descoberta</span>
                     <h2 id="composeTitle">O que está no seu radar, Hunter?</h2>
 
-                    <label class="compose-field" for="composeText">
-                        <span class="sr-only">Texto da publicação</span>
+                    <label class="campo-composicao" for="composeText">
+                        <span class="texto-oculto">Texto da publicação</span>
                         <textarea id="composeText"
                             placeholder="Compartilhe uma teoria, uma curiosidade ou sua cena favorita..."
                             rows="5"></textarea>
                     </label>
 
-                    <div class="compose-actions">
+                    <div class="acoes-composicao">
 
                         <input type="file" id="foto_arquivo" multiple hidden>
-                        <button type="button" class="compose-button compose-button--ghost" onclick="selecionarFotos()">
+                        <button type="button" class="botao-composicao botao-composicao--secundario" onclick="selecionarFotos()">
                             Adicionar imagens
                         </button>
-                        <span class="compose-helper">JPG ou PNG · até 4 imagens de 5 MB</span>
+                        <span class="ajuda-composicao">JPG ou PNG · até 4 imagens de 5 MB</span>
                     </div>
 
-                    <div class="compose-footer">
-                        <label class="compose-select" for="categorySelect">
+                    <div class="rodape-composicao">
+                        <label class="seletor-categoria" for="categorySelect">
                             <span>Categoria:</span>
                             <select id="categorySelect">
                                 <option disabled selected>Selecione uma opção</option>
@@ -88,28 +88,28 @@
                             </select>
                         </label>
 
-                        <label class="compose-spoiler" for="spoilerCheck">
+                        <label class="opcao-spoiler" for="spoilerCheck">
                             <input id="spoilerCheck" type="checkbox" />
                             <span>Contém spoilers</span>
                         </label>
 
-                        <button class="compose-button" onclick="publicar()" type="button">Publicar</button>
+                        <button class="botao-composicao" onclick="publicar()" type="button">Publicar</button>
                     </div>
                 </div>
 
-                <div class="feed-section" aria-labelledby="feedTitle">
-                    <span class="section-kicker">Conversas entre hunters</span>
-                    <h2 class="sr-only" id="feedTitle">Conversas entre hunters</h2>
-                    <div class="feed-list" id="communityFeed"></div>
+                <div class="secao-feed" aria-labelledby="feedTitle">
+                    <span class="rotulo-secao">Conversas entre hunters</span>
+                    <h2 class="texto-oculto" id="feedTitle">Conversas entre hunters</h2>
+                    <div class="lista-feed" id="communityFeed"></div>
                 </div>
             </div>
 
-            <div class="community-side" aria-label="Informações da comunidade">
-                <div class="side-card side-card--dark">
-                    <span class="section-kicker">Licença para conversar</span>
+            <div class="comunidade-lateral" aria-label="Informações da comunidade">
+                <div class="cartao-lateral cartao-lateral--escuro">
+                    <span class="rotulo-secao">Licença para conversar</span>
                     <h2>Um bom Hunter respeita o caminho.</h2>
 
-                    <ol class="community-rules">
+                    <ol class="regras-comunidade">
                         <li>Respeite outros fãs e opiniões.</li>
                         <li>Sinalize spoilers do anime e mangá.</li>
                         <li>Dê os créditos ao compartilhar arte.</li>
@@ -118,25 +118,25 @@
                     <p>Aqui, a curiosidade é bem-vinda.</p>
                 </div>
 
-                <div class="side-card side-card--soft">
-                    <span class="section-kicker">Observatório Hunter</span>
+                <div class="cartao-lateral cartao-lateral--suave">
+                    <span class="rotulo-secao">Observatório Hunter</span>
                     <h2>E os seus favoritos?</h2>
                     <p>
                         Descubra o que a comunidade escolheu no quiz de preferências.
                     </p>
                     <br>
-                    <a class="side-card__button" href="dashboard.html">Ver dashboard coletiva</a>
+                    <a class="botao-cartao-lateral" href="dashboard.html">Ver dashboard coletiva</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container footer__content">
-            <div class="footer-brand">
-                <a class="brand brand--footer" href="index.html" aria-label="Ir para a página inicial">
+    <div class="rodape">
+        <div class="conteiner rodape__conteudo">
+            <div class="rodape-marca">
+                <a class="marca marca--rodape" href="index.html" aria-label="Ir para a página inicial">
                     <img src="./assets/imgs/logoNavbar.png" alt="Logo MyHxH" />
-                    <div class="brand-copy">
+                    <div class="marca__texto">
                         <strong>MyHxH</strong>
                         <span>De fã para explorador</span>
                     </div>
@@ -144,18 +144,18 @@
                 <p>Para quem sabe que a melhor parte é o caminho.</p>
             </div>
 
-            <ul class="footer-nav">
+            <ul class="rodape-nav">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="index.html#obra">O universo</a></li>
                 <li><a href="quiz.html">Quiz de preferências</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
             </ul>
 
-            <div class="footer-note">
+            <div class="rodape-nota">
                 <span>Feito por um aluno Sptech fã de Hunter x Hunter</span>
             </div>
         </div>
-        <div class="container footer__bottom">
+        <div class="conteiner rodape__inferior">
             <h4>Projeto institucional criado por um aluno, sem nenhum intuito profissional.</h4>
             <span>MyHxH &copy; 2026</span>
         </div>
@@ -176,8 +176,8 @@
 
             } else {
 
-                navActions.innerHTML = `<a class="nav-link" href="login.html">Entrar</a>
-                                <a class="nav-cta" href="cadastro.html">Criar conta</a>`;
+                navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
+                                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
 
             }
 
@@ -263,7 +263,7 @@
 
                     if (resposta.status === 204) {
 
-                        feed.innerHTML = "<p class='feed-empty'>Ainda não há publicações na comunidade.</p>";
+                        feed.innerHTML = "<p class='feed-vazio'>Ainda não há publicações na comunidade.</p>";
                         return [];
 
                     }
@@ -273,7 +273,7 @@
                 .then(function (posts) {
 
                     if (!posts || posts.length == 0) {
-                        feed.innerHTML = "<p class='feed-empty'>Ainda não há publicações na comunidade.</p>";
+                        feed.innerHTML = "<p class='feed-vazio'>Ainda não há publicações na comunidade.</p>";
                         return;
                     }
 
@@ -302,20 +302,20 @@
                         }
 
                         const mediaHtml = imagens.map(function (imagem) {
-                            return `<div class="post-media"><img src="./assets/${imagem}"></div>`;
+                            return `<div class="midia-publicacao"><img src="./assets/${imagem}"></div>`;
                         }).join("");
 
                         return `
-                            <div class="post-card">
-                                <div class="post-card__header">
-                                    <div class="post-author">
+                            <div class="cartao-publicacao">
+                                <div class="cabecalho-publicacao">
+                                    <div class="autor-publicacao">
                                         <img src="./assets/imgs/gonIcon.png" alt="Avatar de ${post.nome}" />
                                         <div>
                                             <strong>${post.nome}</strong>
                                             <span>${dataPublicacao} · ${post.categoria} · ${spoilerTexto}</span>
                                         </div>
                                     </div>
-                                    <span class="post-menu" aria-hidden="true">...</span>
+                                    <span class="menu-publicacao" aria-hidden="true">...</span>
                                 </div>
 
                                 <p>${post.mensagem}</p>

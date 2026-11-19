@@ -1,15 +1,15 @@
-.page-community {
+.pagina-comunidade {
   padding: 32px 0 0;
 }
 
-.community-hero {
+.hero-comunidade {
   display: grid;
   gap: 14px;
   padding-bottom: 24px;
 }
 
-.community-hero__eyebrow,
-.section-kicker {
+.hero-comunidade__rotulo,
+.rotulo-secao {
   display: block;
   color: #5b7567;
   font-size: 0.8rem;
@@ -18,7 +18,7 @@
   text-transform: uppercase;
 }
 
-.community-hero h1 {
+.hero-comunidade h1 {
   margin: 0;
   max-width: 13ch;
   color: var(--verde-principal);
@@ -26,14 +26,14 @@
   line-height: 1;
 }
 
-.community-hero p {
+.hero-comunidade p {
   max-width: 56ch;
   margin: 0;
   color: rgba(22, 62, 50, 0.68);
   font-size: 1.05rem;
 }
 
-.community-layout {
+.layout-comunidade {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 296px;
   gap: 28px;
@@ -41,37 +41,37 @@
   padding-bottom: 52px;
 }
 
-.community-main,
-.community-side {
+.comunidade-principal,
+.comunidade-lateral {
   display: grid;
   gap: 20px;
 }
 
-.compose-card,
-.post-card,
-.side-card {
+.cartao-composicao,
+.cartao-publicacao,
+.cartao-lateral {
   padding: 20px;
   border: 1px solid var(--borda-suave);
   border-radius: 8px;
   background: #fffaf2;
 }
 
-.compose-card h2,
-.side-card h2 {
+.cartao-composicao h2,
+.cartao-lateral h2 {
   margin: 10px 0 14px;
   color: var(--verde-principal);
   font-size: 2rem;
   line-height: 1.05;
 }
 
-.side-card--dark h2{
+.cartao-lateral--escuro h2{
   margin: 10px 0 14px;
   color: inherit;
   font-size: 2rem;
   line-height: 1.05;
 }
 
-.compose-field textarea {
+.campo-composicao textarea {
   width: 100%;
   min-height: 100px;
   padding: 14px;
@@ -83,26 +83,26 @@
   outline: none;
 }
 
-.compose-field textarea::placeholder {
+.campo-composicao textarea::placeholder {
   color: rgba(22, 62, 50, 0.48);
 }
 
-.compose-actions,
-.compose-footer,
-.post-card__header,
-.post-author,
-.post-actions {
+.acoes-composicao,
+.rodape-composicao,
+.cabecalho-publicacao,
+.autor-publicacao,
+.acoes-publicacao {
   display: flex;
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-.compose-actions {
+.acoes-composicao {
   margin-top: 14px;
 }
 
-.compose-button {
+.botao-composicao {
   min-height: 42px;
   padding: 0 18px;
   border: 0;
@@ -113,23 +113,23 @@
   cursor: pointer;
 }
 
-.compose-button--ghost {
+.botao-composicao--secundario {
   background: #dbe5d5;
   color: #214538;
 }
 
-.compose-helper {
+.ajuda-composicao {
   color: rgba(22, 62, 50, 0.62);
   font-size: 0.9rem;
 }
 
-.compose-footer {
+.rodape-composicao {
   justify-content: space-between;
   margin-top: 16px;
 }
 
-.compose-select,
-.compose-spoiler {
+.seletor-categoria,
+.opcao-spoiler {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -137,7 +137,7 @@
   font-size: 0.95rem;
 }
 
-.compose-select select {
+.seletor-categoria select {
   padding: 8px 10px;
   border: 1px solid rgba(22, 62, 50, 0.14);
   border-radius: 8px;
@@ -145,80 +145,80 @@
   color: var(--verde-principal);
 }
 
-.compose-spoiler input {
+.opcao-spoiler input {
   width: 14px;
   height: 14px;
   accent-color: var(--laranja-principal);
 }
 
-.feed-section {
+.secao-feed {
   display: grid;
   gap: 14px;
 }
 
-.feed-list {
+.lista-feed {
   display: grid;
   gap: 20px;
 }
 
-.post-card {
+.cartao-publicacao {
   background: #fffaf2;
 }
 
-.post-card__header {
+.cabecalho-publicacao {
   justify-content: space-between;
 }
 
-.post-author img {
+.autor-publicacao img {
   width: 38px;
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.post-author strong {
+.autor-publicacao strong {
   display: block;
   font-size: 0.98rem;
 }
 
-.post-author span {
+.autor-publicacao span {
   color: rgba(22, 62, 50, 0.56);
   font-size: 0.82rem;
 }
 
-.post-card h3 {
+.cartao-publicacao h3 {
   margin: 16px 0 10px;
   color: var(--verde-principal);
   font-size: 2rem;
   line-height: 1.05;
 }
 
-.post-card p {
+.cartao-publicacao p {
   margin: 0;
   color: rgba(22, 62, 50, 0.64);
   font-size: 1rem;
   line-height: 1.6;
 }
 
-.post-media {
+.midia-publicacao {
   margin-top: 16px;
 }
 
-.post-media img {
+.midia-publicacao img {
   width: 100%;
   min-height: 280px;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.post-actions {
+.acoes-publicacao {
   justify-content: space-between;
   margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid rgba(22, 62, 50, 0.12);
 }
 
-.post-actions button {
+.acoes-publicacao button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -227,32 +227,41 @@
   cursor: pointer;
 }
 
-.side-card--dark {
+.cartao-lateral--escuro {
   background: #214b3d;
   color: #f5f0e4;
 }
 
-.side-card--soft {
+.cartao-lateral--suave {
   background: #e8eedf;
 }
 
-.community-rules {
+.regras-comunidade {
   margin: 0;
   padding-left: 20px;
   color: inherit;
 }
 
-.side-card p {
+.cartao-lateral p {
   margin: 0;
   color: inherit;
   line-height: 1.6;
 }
 
-.side-card--soft p {
+.cartao-lateral--suave p {
   color: rgba(22, 62, 50, 0.66);
 }
 
-.side-card__button {
+.feed-vazio {
+  margin: 0;
+  padding: 18px;
+  border: 1px dashed rgba(22, 62, 50, 0.18);
+  border-radius: 8px;
+  color: rgba(22, 62, 50, 0.66);
+  text-align: center;
+}
+
+.botao-cartao-lateral {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -264,7 +273,7 @@
   font-weight: 700;
 }
 
-.sr-only {
+.texto-oculto {
   position: absolute;
   width: 1px;
   height: 1px;
