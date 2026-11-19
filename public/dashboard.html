@@ -92,15 +92,15 @@
           <span class="cartao-dashboard__meta">-- respostas</span>
         </div>
 
-        <p class="cartao-dashboard__texto">Killua, Kurapika, Gon, Hisoka e outros nomes disputam a preferência da
+        <p class="cartao-dashboard__texto">Killua, Gon e outros nomes disputam a preferência da
           comunidade.</p>
 
         <div class="quadro-grafico" id="graficoPersonagem">
-          <canvas id="Personagem"></canvas>
+          <canvas id="Personagem" style="background-color: #E4EAD8" height="169px"></canvas>
         </div>
       </div>
 
-      <div class="cartao-dashboard">
+      <div class="cartao-dashboard cartao-dashboard--amplo">
         <div class="cartao-dashboard__cabecalho">
           <div>
             <span class="cartao-dashboard__rotulo">Pergunta 02</span>
@@ -112,7 +112,7 @@
         <p class="cartao-dashboard__texto">Exame Hunter, Yorknew City, Formigas Quimera e outras etapas da jornada.</p>
 
         <div class="quadro-grafico quadro-grafico--curto" id="graficoArco">
-          <canvas id="Arco"></canvas>
+          <canvas id="Arco" style="background-color: #E4EAD8"></canvas>
         </div>
       </div>
 
@@ -128,7 +128,7 @@
         <p class="cartao-dashboard__texto">A Trupe sempre chama atenção, e cada fã enxerga um destaque diferente.</p>
 
         <div class="quadro-grafico quadro-grafico--anel" id="graficoTrupe">
-          <canvas id="Trupe"></canvas>
+          <canvas id="Trupe" style="background-color: #E4EAD8"></canvas>
         </div>
       </div>
 
@@ -188,13 +188,13 @@
 
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    if (!idUsuario) {
+    /* if (!idUsuario) {
 
       alert("Você precisa estar logado para acessar a dashboard!");
       
       window.location.replace("login.html");
     }
-
+ */
 
     fetch("/dashboard/dashboard")
       .then(function (res) {
@@ -255,9 +255,36 @@
             }]
           },
           options: {
+            layout: {
+              padding: {
+                top: 20,
+                right: 30,
+                bottom: 20,
+                left: 20
+              }
+            },
             indexAxis: 'y',
             scales: {
+
+              x: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
+              },
               y: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
                 beginAtZero: true
               }
             }
@@ -309,10 +336,37 @@
             }]
           },
           options: {
+            layout: {
+              padding: {
+                top: 20,
+                right: 0,
+                bottom: 20,
+                left: 20
+              }
+            },
             responsive: true,
             maintainAspectRatio: false,
             scales: {
+
+              x: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
+              },
               y: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
                 beginAtZero: true
               }
             }
@@ -362,10 +416,36 @@
             }]
           },
           options: {
+            layout: {
+              padding: {
+                top: 20,
+                right: 30,
+                bottom: 20,
+                left: 20
+              }
+            },
             responsive: true,
             maintainAspectRatio: false,
             scales: {
+              x: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
+              },
               y: {
+                grid: {
+
+                  display: false
+                },
+                border: {
+
+                  display: false
+                },
                 beginAtZero: true
               }
             }

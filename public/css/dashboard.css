@@ -103,7 +103,7 @@
 
 .grade-dashboard {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-top: 26px;
 }
@@ -179,7 +179,7 @@
 }
 
 .notas-dashboard {
-  grid-column: span 1;
+  grid-column: span 2;
   padding: 26px 24px;
   background: #e4ead8;
 }
@@ -214,4 +214,26 @@
 .cartao-dashboard--amplo .quadro-grafico,
 .cartao-dashboard--inferior .quadro-grafico {
   min-height: 300px;
+}
+
+@media (max-width: 1180px) {
+  .grade-dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cartao-dashboard--amplo,
+  .notas-dashboard {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .grade-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao-dashboard--amplo,
+  .notas-dashboard {
+    grid-column: span 1;
+  }
 }
