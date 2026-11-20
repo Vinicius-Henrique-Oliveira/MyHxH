@@ -25,19 +25,15 @@
                     <strong>MyHxH</strong>
                     <span>De fã para explorador</span>
                 </div>
+
             </a>
 
-            <div class="navegacao-central" aria-label="Navegação principal">
-                <ul class="menu-navegacao menu-navegacao--central">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#obra">O universo</a></li>
-                    <li><a href="quiz.html">Quiz de preferências</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="comunidade.html">Comunidade</a></li>
-                </ul>
+            <div id="navegacao" class="navegacao-central" aria-label="Navegação principal">
+
             </div>
 
-            <div class="acoes-cabecalho" id="navActions"></div>
+            <div class="acoes-cabecalho" id="navActions">
+            </div>
         </div>
     </div>
 
@@ -87,8 +83,7 @@
                         aria-label="Escolha do personagem favorito">
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="Gon" />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--gon"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--gon" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Gon Freecss</strong>
                                 <span>Um coração aventureiro</span>
@@ -99,8 +94,7 @@
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito" value="Killua"
                                 checked />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--killua"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--killua" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Killua Zoldyck</strong>
                                 <span>Godspeed</span>
@@ -111,8 +105,7 @@
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Kurapika" />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--kurapika"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--kurapika" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Kurapika</strong>
                                 <span>Olhos escarlates</span>
@@ -123,8 +116,7 @@
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Netero" />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--netero"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--netero" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Netero</strong>
                                 <span>A voz da humanidade</span>
@@ -135,8 +127,7 @@
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Hisoka" />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--hisoka"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--hisoka" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Hisoka</strong>
                                 <span>O mágico da morte</span>
@@ -147,8 +138,7 @@
                         <label class="cartao-opcao cartao-opcao--imagem">
                             <input type="radio" onclick="atualizarResultado()" name="personagemFavorito"
                                 value="Meruem" />
-                            <span class="cartao-opcao__imagem cartao-opcao__imagem--meruem"
-                                aria-hidden="true"></span>
+                            <span class="cartao-opcao__imagem cartao-opcao__imagem--meruem" aria-hidden="true"></span>
                             <span class="cartao-opcao__corpo">
                                 <strong>Meruem</strong>
                                 <span>Rei Quimera</span>
@@ -171,8 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="opcoes-quiz opcoes-quiz--grade" role="radiogroup"
-                        aria-label="Escolha do arco favorito">
+                    <div class="opcoes-quiz opcoes-quiz--grade" role="radiogroup" aria-label="Escolha do arco favorito">
                         <label class="pilula-opcao">
                             <input type="radio" onclick="atualizarResultado()" name="arcoFavorito"
                                 value="exame-hunter" />
@@ -244,7 +233,8 @@
                     <div class="opcoes-quiz opcoes-quiz--grade" role="radiogroup"
                         aria-label="Escolha do membro da Trupe Fantasma">
                         <label class="pilula-opcao">
-                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Chrollo" checked />
+                            <input type="radio" onclick="atualizarResultado()" name="trupeFavorita" value="Chrollo"
+                                checked />
                             <span class="pilula-opcao__corpo">
                                 <strong>Chrollo Lucilfer</strong>
                                 <span>O estrategista</span>
@@ -346,13 +336,33 @@
             const nome = sessionStorage.NOME_USUARIO;
 
             if (nome) {
-                const primeiro_nome = nome.split(" ")[0];
+
+                const primeiro_nome = nome.split(" ")[0]
 
                 navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
-                            <button onclick="limparSessao()">Sair</button>`;
+                <button onclick="limparSessao()">Sair</button>`
+
+                navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#obra">O universo</a></li>
+                <li><a href="quiz.html">Quiz de preferências</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>`;
+
+
             } else {
+
                 navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
-                                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
+                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
+
+                navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#obra">O universo</a></li>
+                <li><a href="quiz.html">Quiz de preferências</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>`
+
             }
         }
 
@@ -377,7 +387,7 @@
 
             if (!idUsuario) {
                 alert("Você precisa estar logado para responder o quiz.")
-                window.location.href='login.html'
+                window.location.href = 'login.html'
                 return;
             }
 
@@ -397,15 +407,15 @@
                 },
                 body: JSON.stringify(dadosQuiz)
             })
-                .then (res => {
+                .then(res => {
                     if (res.ok) {
                         alert("Quiz enviado com sucesso!");
-                        window.location.href='dashboard.html'
+                        window.location.href = 'dashboard.html'
                     } else {
                         alert("Erro ao enviar quiz");
                     }
-            })
-            .catch(erro => console.log(erro));
+                })
+                .catch(erro => console.log(erro));
         }
 
     </script>

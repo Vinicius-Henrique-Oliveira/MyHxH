@@ -29,14 +29,8 @@
 
             </a>
 
-            <div class="navegacao-central" aria-label="Navegação principal">
-                <ul class="menu-navegacao menu-navegacao--central">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#obra">O universo</a></li>
-                    <li><a href="quiz.html">Quiz de preferências</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="comunidade.html">Comunidade</a></li>
-                </ul>
+            <div id="navegacao" class="navegacao-central" aria-label="Navegação principal">
+
             </div>
 
             <div class="acoes-cabecalho" id="navActions">
@@ -70,7 +64,8 @@
                     <div class="acoes-composicao">
 
                         <input type="file" id="foto_arquivo" multiple hidden>
-                        <button type="button" class="botao-composicao botao-composicao--secundario" onclick="selecionarFotos()">
+                        <button type="button" class="botao-composicao botao-composicao--secundario"
+                            onclick="selecionarFotos()">
                             Adicionar imagens
                         </button>
                         <span class="ajuda-composicao">JPG ou PNG · até 4 imagens de 5 MB</span>
@@ -125,7 +120,7 @@
                         Descubra o que a comunidade escolheu no quiz de preferências.
                     </p>
                     <br>
-                    <a class="botao-cartao-lateral" href="dashboard.html">Ver dashboard coletiva</a>
+                    <a class="botao-cartao-lateral" onclick="dash()">Ver dashboard coletiva</a>
                 </div>
             </div>
         </div>
@@ -172,12 +167,28 @@
                 const primeiro_nome = nome.split(" ")[0]
 
                 navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
-                            <button onclick="limparSessao()">Sair</button>`
+                <button onclick="limparSessao()">Sair</button>`
+
+                navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#obra">O universo</a></li>
+                <li><a href="quiz.html">Quiz de preferências</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>`;
+
 
             } else {
 
                 navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
-                                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
+                <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
+
+                navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#obra">O universo</a></li>
+                <li><a href="quiz.html">Quiz de preferências</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                </ul>`
 
             }
 
@@ -332,6 +343,18 @@
         }
 
         carregarPosts();
+
+        function dash() {
+
+            const idUsuario = sessionStorage.ID_USUARIO;
+
+            if (!idUsuario) {
+                alert("Você precisa estar logado para responder o quiz.")
+                window.location.href = 'login.html'
+                return;
+
+            }
+        }
 
     </script>
 

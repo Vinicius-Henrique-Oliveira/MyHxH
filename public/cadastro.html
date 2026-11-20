@@ -29,19 +29,11 @@
 
       </a>
 
-      <div class="navegacao-central" aria-label="Navegação principal">
-        <ul class="menu-navegacao menu-navegacao--central">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="index.html#obra">O universo</a></li>
-          <li><a href="quiz.html">Quiz de preferências</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="comunidade.html">Comunidade</a></li>
-        </ul>
+      <div id="navegacao" class="navegacao-central" aria-label="Navegação principal">
+        
       </div>
 
-      <div class="acoes-cabecalho">
-        <a class="link-cabecalho" href="login.html">Entrar</a>
-        <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>
+      <div class="acoes-cabecalho" id="navActions">
       </div>
     </div>
   </div>
@@ -136,6 +128,47 @@
 </html>
 
 <script>
+
+  function navbar_usuario() {
+
+    const nome = sessionStorage.NOME_USUARIO;
+
+    if (nome) {
+
+      const primeiro_nome = nome.split(" ")[0]
+
+      navActions.innerHTML = `<span>Bem vindo de volta, ${primeiro_nome}!</span>
+                                <button onclick="limparSessao()">Sair</button>`
+
+      navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#obra">O universo</a></li>
+          <li><a href="quiz.html">Quiz de preferências</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+        </ul>`
+        ;
+
+
+    } else {
+
+      navActions.innerHTML = `<a class="link-cabecalho" href="login.html">Entrar</a>
+                                    <a class="botao-cabecalho" href="cadastro.html">Criar conta</a>`;
+
+      navegacao.innerHTML = `<ul class="menu-navegacao menu-navegacao--central">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#obra">O universo</a></li>
+          <li><a href="quiz.html">Quiz de preferências</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+        </ul>`
+
+    }
+
+  }
+
+
+
+  navbar_usuario()
 
   let validacao_senha = false;
   let validacao_confirmacao = false;
